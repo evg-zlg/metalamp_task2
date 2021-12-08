@@ -1,0 +1,18 @@
+$primaryColor: yellow;
+$secondaryColor: darkslategray; 
+
+html {
+  font-family: generalFont;
+}
+
+h1 {
+  color: $secondaryColor;
+}
+
+.container {
+  color: $primaryColor;
+  
+  height: 200px;
+  width: 300px;
+  background: url("../image/webpack.png");
+}
