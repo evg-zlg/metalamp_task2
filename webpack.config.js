@@ -10,8 +10,8 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
-    template: "./src/index.html"  
-    })
+    template: "./src/index.pug"  
+    }),
   ],
   module: {
     rules: [
@@ -49,6 +49,12 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
+      },
+      {
+        test: /\.pug$/,
+        loader: 'pug-loader',
+//        exclude: /(node_modules|bower_components)/,
+        options: {pretty: true},
       },
     ]
   },
