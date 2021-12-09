@@ -7,6 +7,7 @@ module.exports = {
     assetModuleFilename: "asset/[hash][ext][query]",
     clean: true,
   },
+  devtool: 'source-map',
   plugins: [
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
