@@ -1,13 +1,13 @@
 include pug/libs/_libs
-include pug/_head 
-
 
 doctype html
-html(lang='en')
+html(lang="en")
+include pug/_head 
   body
+    include pug/libs/_header
     .body
-      +image('walp')
-      +image('webpack')
+      +image("walp")
+      +image("webpack")
     h1 НАВИГАЦИЯ
     .container
       p Служба поддержки
