@@ -53,8 +53,7 @@ module.exports = {
       {
         test: /\.pug$/,
         loader: 'pug-loader',
-//        exclude: /(node_modules|bower_components)/,
-        options: {pretty: true},
+        exclude: /(node_modules|bower_components)/,
       },
     ]
   },
