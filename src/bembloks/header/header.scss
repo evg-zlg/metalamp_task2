@@ -4,7 +4,33 @@
   background-image: url("../bembloks/header/logo.png");
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .header__nav {
-  max-width: 500px;
+  max-width: 447px;
+  min-width: 350px;
+}
+.header__items {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  list-style-type: none;
+}
+.nav__element {
+  font-size: 14px;
+}
+.nav__link {
+  text-decoration: none;
+  color: rgba(31, 32, 65, 0.5);
+}
+.auth {
+  margin: 0;
+}
+.auth button {
+  margin: 5px;
+  height: 34px;
+  min-width: 87px;
+  border-radius: 22px;
+  border: 2px solid;
+  border-image-source: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 }
