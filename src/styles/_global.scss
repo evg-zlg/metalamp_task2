@@ -4,21 +4,15 @@ $secondaryColor: darkslategray;
 html {
   font-family: generalFont;
 }
+.logo-uikit {
+  background: url("../images/logo.svg");
+  height: 48px;
+  width: 48px;
+  margin: 30px;
+}
 
 h1 {
   color: $secondaryColor;
-}
-
-.container {
-  color: $primaryColor;
-  
-  height: 200px;
-  width: 300px;
-  background: url("../images/webpack.png");
-} 
-
-.header {
-  background-color: aqua;
 }
 
 .somebutton {
