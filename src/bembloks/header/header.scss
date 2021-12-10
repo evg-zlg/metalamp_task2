@@ -9,6 +9,7 @@
 .header__nav {
   max-width: 447px;
   min-width: 350px;
+  margin-right: 10px;
 }
 .header__items {
   display: flex;
@@ -18,6 +19,7 @@
 }
 .nav__element {
   font-size: 14px;
+  line-height: 17px;
 }
 .nav__link {
   text-decoration: none;
@@ -25,12 +27,26 @@
 }
 .auth {
   margin: 0;
+  min-width: 250px;
 }
 .auth button {
   margin: 5px;
+  padding:0;
   height: 34px;
-  min-width: 87px;
   border-radius: 22px;
+}
+.enter {
+  width: 87px;
   border: 2px solid;
   border-image-source: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}
+.reg {
+  width: 196px;
+  border: none;
+  color: white;
+  font-size: 12px;
+  
+  line-height: 15px;
+  text-transform: uppercase;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 }
