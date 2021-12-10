@@ -14,7 +14,9 @@ html {
 h1 {
   color: $secondaryColor;
 }
-
+.headers-footers, .cards {
+  background-color: #E5E5E5;
+}      
 .somebutton {
   height: 50px;
   color: red;
