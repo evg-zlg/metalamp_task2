@@ -1,4 +1,10 @@
 .header {
   background-color: rgb(199, 195, 195);
   height: 70px;
+  background-image: url("../bembloks/header/logo.png");
+  display: flex;
+  justify-content: space-between;
+}
+.header__nav {
+  max-width: 500px;
 }
