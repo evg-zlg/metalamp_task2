@@ -1,0 +1,26 @@
+.color-block {
+  width: 281.26px;
+  display: flex;
+}
+.color-block__rectangle {
+  height: 70px;
+  width: 70px;
+  background: #1F2041;
+  border-radius: 6px;
+  margin-right: 40px;
+}
+.color-block__text {
+  margin: auto;
+  max-width: 171px;
+  height: 56px;
+}
+.color-block__text p {
+  margin: 0;
+  font-family: generalFont;
+  font-size: 19px;
+  //font-style: normal;
+  //font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+}
