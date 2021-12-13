@@ -25,6 +25,9 @@ h1 {
   height: 800px;
   padding-left: 149.74px;
   padding-top: 145px;
+  padding-bottom: 145px;
+  display: flex;
+  justify-content: space-between;
 }
 .headers-footers, .cards {
   background-color: #E5E5E5;

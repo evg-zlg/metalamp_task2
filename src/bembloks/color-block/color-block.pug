@@ -1,7 +1,8 @@
 style 
   include color-block.scss
-div.color-block
-  div.color-block__rectangle
-  div.color-block__text
-    p.color-block__title Dark Shade 100%
-    p.color-block__code #1F2041
+mixin color-block(name, col, bg) 
+  div.color-block
+    div.color-block__rectangle(class="color-block__rectangle color-block__rectangle_bg_"+bg)
+    div.color-block__text
+      p.color-block__title #{name}
+      p.color-block__code #{col}

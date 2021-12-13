@@ -1,1 +1,2 @@
-(()=>{"use strict";console.log({name:"Evgen",age:"35",language:"JavaScript",framework:"Angular"})})();
+(()=>{"use strict";console.log(user)})();
+//# sourceMappingURL=main.js.map

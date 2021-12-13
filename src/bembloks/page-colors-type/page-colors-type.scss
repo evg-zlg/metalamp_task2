@@ -1,0 +1,12 @@
+@import "../../bembloks/color-block/color-block.scss";
+
+.colors {
+  max-width: 281.26px;
+  height: 610px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.types {
+  margin-right: 158px;
+}
