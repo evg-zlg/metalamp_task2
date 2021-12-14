@@ -1,7 +1,15 @@
 @import "../../bembloks/color-block/color-block.scss";
 
+.page-title {
+  color:rgba(31, 32, 65, 0.25);
+}
 .content {
   max-width: 1200px;
+  background-color: white;
+  height: 800px;
+  padding-left: 153px;
+  padding-top: 37px;
+  padding-bottom: 0;
   display: flex;
   justify-content: space-between;
 }
