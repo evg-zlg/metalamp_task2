@@ -6,11 +6,13 @@
   display:flex;
   flex-direction: column;
   justify-content: space-between;
+
 }
 .types {
   margin-right: 158px;
   max-width: 436px;
   max-height: 321px;
+  margin-left: 704,26px;
 }
 .types__item {
   color: #1F2041;
@@ -47,6 +49,9 @@
 .types__h1 {
   font-weight: bold;
   margin: 0;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: normal;
 }
 .types__h2 {
   font-weight: bold;

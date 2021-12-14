@@ -14,7 +14,11 @@ article {
   background: url("../images/logo.svg");
   height: 48px;
   width: 48px;
-  margin: 0 0 62px 30px;
+  position: absolute;
+  left: 30px;
+  top: 100px;
+  padding: 0;
+  margin: 0;
 }
 
 .colors-type {

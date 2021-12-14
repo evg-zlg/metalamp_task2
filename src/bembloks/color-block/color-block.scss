@@ -32,18 +32,23 @@
 }
 .color-block__text {
   color: #1F2041;
-  max-width: 171px;
-  height: 56px;
+  max-width: 176px;
+  height: 56px;  
 }
-
-.color-block__text p {
+.color-block__title {
+  font-family: generalFont;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 28.5px;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.3px
+}
+.color-block__code {
   margin: 0;
   font-family: generalFont;
   font-size: 19px;
-  line-height: 27.79px;
-  letter-spacing: 0em;
+  line-height: 27,79px;
   text-align: left;
 }
-.color-block__title {
-  font-weight: bold;
-}
+
