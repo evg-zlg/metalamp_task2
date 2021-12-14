@@ -1,26 +1,27 @@
 style 
   include page-colors-type.scss
-figure.logo-uikit 
-div.colors
-  include ../../bembloks/color-block/color-block.pug
-  +color-block("Dark Shade 100%", "#1F2041", "ds100")
-  +color-block("Dark Shade 75%", "#1F2041", "ds75")
-  +color-block("Dark Shade 50%", "#1F2041", "ds50")
-  +color-block("Dark Shade 25%", "#1F2041", "ds25")
-  +color-block("Dark Shade 5%", "#1F2041", "ds5")
-  +color-block("Purple", "#BC9CFF", "purple")
-  +color-block("Green", "#6FCF97", "green")
-  
-div.types
-  div.types__item
-    p.types__title H1
-    h1.types__h1 This one is the sub-section or widget title
-  div.types__item
-    p.types__title H2
-    h2.types__h2 Next one is the item title inside widgets
-  div.types__item
-    p.types__title H3
-    h3.types__h3 This is a label or CTA text
-  div.types__item
-    p.types__title Body
-    p.types__body This is the body text which is used for most of the design, like paragraphs, lists, etc.
+figure.logo-uikit
+div.content
+  div.colors
+    include ../../bembloks/color-block/color-block.pug
+    +color-block("Dark Shade 100%", "#1F2041", "ds100")
+    +color-block("Dark Shade 75%", "#1F2041", "ds75")
+    +color-block("Dark Shade 50%", "#1F2041", "ds50")
+    +color-block("Dark Shade 25%", "#1F2041", "ds25")
+    +color-block("Dark Shade 5%", "#1F2041", "ds5")
+    +color-block("Purple", "#BC9CFF", "purple")
+    +color-block("Green", "#6FCF97", "green")
+    
+  div.types
+    div.types__item
+      p.types__title H1
+      h1.types__h1 This one is the sub-section or widget title
+    div.types__item
+      p.types__title H2
+      h2.types__h2 Next one is the item title inside widgets
+    div.types__item
+      p.types__title H3
+      h3.types__h3 This is a label or CTA text
+    div.types__item
+      p.types__title Body
+      p.types__body This is the body text which is used for most of the design, like paragraphs, lists, etc.

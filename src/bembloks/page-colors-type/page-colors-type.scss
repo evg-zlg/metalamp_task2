@@ -1,7 +1,12 @@
 @import "../../bembloks/color-block/color-block.scss";
 
+.content {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+}
 .colors {
-  max-width: 281.26px;
+  margin-right: 415px;
   height: 610px;
   display:flex;
   flex-direction: column;
@@ -9,10 +14,11 @@
 
 }
 .types {
-  margin-right: 158px;
-  max-width: 436px;
+  margin-right: 100px;
+  margin-top: -2.1px; 
+  max-width: 450px;
   max-height: 321px;
-  margin-left: 704,26px;
+  
 }
 .types__item {
   color: #1F2041;
@@ -49,17 +55,26 @@
 .types__h1 {
   font-weight: bold;
   margin: 0;
+  margin-left: 4px;
   font-size: 24px;
   line-height: 29px;
-  letter-spacing: normal;
+  letter-spacing: 0.5px;
 }
 .types__h2 {
   font-weight: bold;
   margin: 0;
+  margin-left: 3px;
+  margin-top: 1px;
+  font-size: 19px;
+  line-height: 23px;
+  letter-spacing: 0.3px;
+
 }
 .types__h3 {
   font-weight: bold;
   margin: 0;
+  margin-left: 4px;
+  margin-top: 2px
 }
 .types__body {
   margin: 0;
