@@ -1,7 +1,13 @@
+include /text-field-block/text-field-block.pug
+include /dropdown-block/dropdown-block.pug
 style 
   include page-form-elements.scss
 header.header-pages-uikit
   figure.logo-uikit
   h2.page-title Form elements
-
 div.content
+  div.colums 
+    +text-field("TEXT FIELD","Email","mode")
+    +text-field("TEXT FIELD","This is pretty awesome","mode")
+    +dropdown("DROPDAWN", "testtext", "options")   
+    

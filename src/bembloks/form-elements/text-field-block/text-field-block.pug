@@ -1,0 +1,7 @@
+style
+  include text-field-block.scss
+// mode - text, masked, subscription
+mixin text-field(lab, placehol, mode)
+  div.text-field
+    label.text-field__label #{lab}
+      input(type="text" placeholder=placehol class="text-field__input")  
