@@ -1,7 +1,8 @@
 style
   include dropdown-block.scss 
 mixin dropdown(lab, placehold, options)
-  label.dropdawn__label #{lab}
-    select(name="dropdawn")
-      each item in ["red", "green", "blue"] 
-        option=item
+  div.dropdown 
+    label.dropdown__label #{lab}
+      select.dropdown__select(name="dropdawn")
+        each item in ["red", "green", "blue"] 
+          option=item
