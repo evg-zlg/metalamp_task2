@@ -1,13 +1,24 @@
 include /text-field-block/text-field-block.pug
 include /dropdown-block/dropdown-block.pug
+include /checkbox/checkbox.pug
 style 
   include page-form-elements.scss
 header.header-pages-uikit
   figure.logo-uikit
   h2.page-title Form elements
 div.content
-  div.colums 
-    +text-field("TEXT FIELD","Email","mode")
-    +text-field("TEXT FIELD","This is pretty awesome","mode")
-    +dropdown("DROPDAWN", "Сколько гостей", "options")   
-    
+  div.row
+    div.colums 
+      +text-field("TEXT FIELD","Email","default")
+      +text-field("TEXT FIELD","This is pretty awesome","default")
+      +dropdown("DROPDAWN", "Сколько гостей", "options")   
+      +text-field("masked TEXT FIELD","ДД.ММ.ГГГГ","masked")
+      +dropdown("filter date dropdown", "19 авг - 23 авг", "options")   
+      +text-field("subscription text field", "Email", "subscr")   
+    div.colums
+      div.content__checkbox
+        p checkbox buttons
+        +checkbox("Можно курить", "mode")
+        +checkbox("Можно с питомцами", "mode")
+        +checkbox("Можно пригласить гостей (до 10 человек)", "mode")
+    div.colums  

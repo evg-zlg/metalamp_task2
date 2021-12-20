@@ -1,0 +1,7 @@
+style
+  include checkbox.scss
+// mode - text, masked, subscription
+mixin checkbox(lab, mode)
+  div.checkbox
+    input(type="checkbox" class="checkbox__input"+" checkbox__input-"+mode)  
+    label.checkbox__label #{lab}

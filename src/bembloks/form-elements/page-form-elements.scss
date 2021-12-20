@@ -3,3 +3,29 @@
   max-width: 1200px;
   height: 800px;
 }
+.row {
+  height: 625px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.colums {
+  height: 615px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.content__checkbox {
+  width: 222px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+.content__checkbox p {
+  margin: 0;
+  padding: 0;
+  
+}
