@@ -7,9 +7,9 @@
   max-width: 1200px;
   background-color: white;
   height: 800px;
-  padding-left: 149.74px;
-  padding-top: 145px;
-  padding-bottom: 145px;
+  padding-left: 153px;
+  padding-top: 37px;
+  padding-bottom: 0;
   display: flex;
   justify-content: space-between;
 }
@@ -140,14 +140,305 @@
   font-size: 19px;
   line-height: 27,79px;
   text-align: left;
-}</style><div class="color-block"><div class="color-block__rectangle color-block__rectangle color-block__rectangle_bg_ds100"></div><div class="color-block__text"><p class="color-block__title">Dark Shade 100%</p><p class="color-block__code">#1F2041</p></div></div><div class="color-block"><div class="color-block__rectangle color-block__rectangle color-block__rectangle_bg_ds75"></div><div class="color-block__text"><p class="color-block__title">Dark Shade 75%</p><p class="color-block__code">#1F2041</p></div></div><div class="color-block"><div class="color-block__rectangle color-block__rectangle color-block__rectangle_bg_ds50"></div><div class="color-block__text"><p class="color-block__title">Dark Shade 50%</p><p class="color-block__code">#1F2041</p></div></div><div class="color-block"><div class="color-block__rectangle color-block__rectangle color-block__rectangle_bg_ds25"></div><div class="color-block__text"><p class="color-block__title">Dark Shade 25%</p><p class="color-block__code">#1F2041</p></div></div><div class="color-block"><div class="color-block__rectangle color-block__rectangle color-block__rectangle_bg_ds5"></div><div class="color-block__text"><p class="color-block__title">Dark Shade 5%</p><p class="color-block__code">#1F2041</p></div></div><div class="color-block"><div class="color-block__rectangle color-block__rectangle color-block__rectangle_bg_purple"></div><div class="color-block__text"><p class="color-block__title">Purple</p><p class="color-block__code">#BC9CFF</p></div></div><div class="color-block"><div class="color-block__rectangle color-block__rectangle color-block__rectangle_bg_green"></div><div class="color-block__text"><p class="color-block__title">Green</p><p class="color-block__code">#6FCF97</p></div></div></div><div class="types"><div class="types__item"><p class="types__title">H1</p><h1 class="types__h1">This one is the sub-section or widget title</h1></div><div class="types__item"><p class="types__title">H2</p><h2 class="types__h2">Next one is the item title inside widgets</h2></div><div class="types__item"><p class="types__title">H3</p><h3 class="types__h3">This is a label or CTA text</h3></div><div class="types__item"><p class="types__title">Body</p><p class="types__body">This is the body text which is used for most of the design, like paragraphs, lists, etc.</p></div></div></div></section><section class="elements"><style>.content {
+}</style><div class="color-block"><div class="color-block__rectangle color-block__rectangle color-block__rectangle_bg_ds100"></div><div class="color-block__text"><p class="color-block__title">Dark Shade 100%</p><p class="color-block__code">#1F2041</p></div></div><div class="color-block"><div class="color-block__rectangle color-block__rectangle color-block__rectangle_bg_ds75"></div><div class="color-block__text"><p class="color-block__title">Dark Shade 75%</p><p class="color-block__code">#1F2041</p></div></div><div class="color-block"><div class="color-block__rectangle color-block__rectangle color-block__rectangle_bg_ds50"></div><div class="color-block__text"><p class="color-block__title">Dark Shade 50%</p><p class="color-block__code">#1F2041</p></div></div><div class="color-block"><div class="color-block__rectangle color-block__rectangle color-block__rectangle_bg_ds25"></div><div class="color-block__text"><p class="color-block__title">Dark Shade 25%</p><p class="color-block__code">#1F2041</p></div></div><div class="color-block"><div class="color-block__rectangle color-block__rectangle color-block__rectangle_bg_ds5"></div><div class="color-block__text"><p class="color-block__title">Dark Shade 5%</p><p class="color-block__code">#1F2041</p></div></div><div class="color-block"><div class="color-block__rectangle color-block__rectangle color-block__rectangle_bg_purple"></div><div class="color-block__text"><p class="color-block__title">Purple</p><p class="color-block__code">#BC9CFF</p></div></div><div class="color-block"><div class="color-block__rectangle color-block__rectangle color-block__rectangle_bg_green"></div><div class="color-block__text"><p class="color-block__title">Green</p><p class="color-block__code">#6FCF97</p></div></div></div><div class="types"><div class="types__item"><p class="types__title">H1</p><h1 class="types__h1">This one is the sub-section or widget title</h1></div><div class="types__item"><p class="types__title">H2</p><h2 class="types__h2">Next one is the item title inside widgets</h2></div><div class="types__item"><p class="types__title">H3</p><h3 class="types__h3">This is a label or CTA text</h3></div><div class="types__item"><p class="types__title">Body</p><p class="types__body">This is the body text which is used for most of the design, like paragraphs, lists, etc.</p></div></div></div></section><section class="elements"><style>.text-field {
+  display: flex;
+  align-items: flex-start;    
+}
+.text-field__label {
+  display: block;
+  font-family: generalFont;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #1F2041;
+
+}
+.text-field__input {
+  display: block;
+  margin-top: 5px;
+  width: 320px;
+  height: 44px;
+  background: #FFFFFF;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding-left: 15px;
+  font-family: generalFont;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.75);
+}
+.text-field__input::placeholder {
+  color: rgba(31, 32, 65, 0.25);
+}
+.text-field__input:hover::placeholder {
+  color: rgba(31, 32, 65, 0.75);
+}
+.text-field__input:hover {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+}
+.text-field__input:focus {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+}
+.text-field__input-masked {
+
+}
+.text-field__input-subscr {
+
+}</style><style>.dropdown {
+  display: flex;
+  flex-direction: column;
+  
+}
+.dropdown__label {
+  display: block;
+  font-family: generalFont;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #1F2041;
+}
+.dropdown__select {
+  display: block;
+  position: relative;
+  width: 320px;
+  height: 44px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding-left: 15px;
+  appearance: none;
+  background: #FFFFFF;
+  text-align: left;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  cursor: pointer;
+} 
+.dropdown__select:hover, .dropdown__select:focus {
+  border: 1px solid rgba(31, 32, 65, 0.5);
+}
+.dropdown__select--open {
+  border-radius: 4px 4px 0 0;  
+}
+.arrow {
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid rgba(31, 32, 65, 0.5);;
+  border-top: 2px solid rgba(31, 32, 65, 0.5);
+  margin-right: 15px;
+  position: absolute;
+  right: 0;
+  top: 15px;
+  transform: rotate(135deg);
+}
+.dropdown__items {
+  margin: 0;
+  padding-left: 15px;
+  padding-right: 7px;
+  list-style-type: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: generalFont;
+  font-size: 12px;
+  line-height: 15px;
+  width: 320px;
+  height: 159px;
+  background: #FFFFFF;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  border-radius: 0 0 4px 4px;
+  box-sizing: border-box;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  text-align: left;
+  display: none;
+  border-top: none;
+}
+.dropdown__items--visible {
+  display: block;  
+}
+.dropdown__item {
+  margin-top: 7.5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dropdown__control {
+  width: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dropdown__count {
+  margin: 0;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #1F2041;
+}
+.dropdown__btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  justify-content: center;
+  color: rgba(31, 32, 65, 0.5);
+  cursor: pointer;
+
+}
+.dropdown__btn-disable {
+  border: 1px solid rgba(31, 32, 65, 0.25);
+}
+.dropdown__btn span {
+  display: inline-block;
+  margin-top: 2px;
+}</style><style>.checkbox {
+  max-width: 222px;
+}
+.checkbox__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.checkbox__label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  font-family: generalFont;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.5);
+}
+.checkbox__label::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #adb5bd;
+  border-radius: 4px;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+.checkbox__label::after {
+  content: '';
+  display: inline-block;
+  border: 1px rgb(68, 67, 67);
+  width: 20px;
+  height: 20px;
+
+}
+}
+.checkbox__input:checked+label::after {
+  content: '';
+
+}
+/* стили при наведении курсора на checkbox */
+.checkbox__input:not(:disabled):not(:checked)+label:hover::before {
+  border-color: #b3d7ff;
+}
+/* стили для активного состояния чекбокса (при нажатии на него) */
+.checkbox__input:not(:disabled):active+label::before {
+  background-color: #b3d7ff;
+  border-color: #b3d7ff;
+}
+/* стили для чекбокса, находящегося в фокусе */
+.checkbox__input:focus+label::before {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.checkbox__input:focus:not(:checked)+label::before {
+  border-color: #80bdff;
+}
+/* стили для чекбокса, находящегося в состоянии disabled */
+.checkbox__input:disabled+label::before {
+  background-color: #e9ecef;
+}</style><style>.content {
   max-width: 1200px;
   height: 800px;
-}</style><figure class="logo-uikit"></figure><h2 class="page-title">Form elements</h2><div class="content"></div></section><section class="headers-footers"><figure class="logo-uikit"></figure><header class="header"><style>.header {
+}
+.row {
+  height: 625px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.colums {
+  height: 615px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.content__checkbox {
+  width: 222px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+.content__checkbox p {
+  margin: 0;
+  padding: 0;
+  
+}</style><header class="header-pages-uikit"><figure class="logo-uikit"></figure><h2 class="page-title">Form elements</h2></header><div class="content"><div class="row"><div class="colums"><div class="text-field"><label class="text-field__label">TEXT FIELD<input class="text-field__input text-field__input-default" placeholder="Email"></label></div><div class="text-field"><label class="text-field__label">TEXT FIELD<input class="text-field__input text-field__input-default" placeholder="This is pretty awesome"></label></div><div class="dropdown"><label class="dropdown__label">DROPDAWN</label><button class="dropdown__select">Сколько гостей<div class="arrow"></div></button><ul class="dropdown__items"><li class="dropdown__item">взрослые<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item">дети<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item">младенцы<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item"><button class="clear">очистить</button><button class="apply">применить</button></li></ul></div><div class="text-field"><label class="text-field__label">masked TEXT FIELD<input class="text-field__input text-field__input-masked" placeholder="ДД.ММ.ГГГГ"></label></div><div class="dropdown"><label class="dropdown__label">filter date dropdown</label><button class="dropdown__select">19 авг - 23 авг<div class="arrow"></div></button><ul class="dropdown__items"><li class="dropdown__item">взрослые<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item">дети<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item">младенцы<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item"><button class="clear">очистить</button><button class="apply">применить</button></li></ul></div><div class="dropdown"><label class="dropdown__label">DROPDAWN</label><button class="dropdown__select">Сколько гостей2<div class="arrow"></div></button><ul class="dropdown__items"><li class="dropdown__item">взрослые<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item">дети<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item">младенцы<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item"><button class="clear">очистить</button><button class="apply">применить</button></li></ul></div><div class="text-field"><label class="text-field__label">subscription text field<input class="text-field__input text-field__input-subscr" placeholder="Email"></label></div></div><div class="colums"><div class="content__checkbox"><p>checkbox buttons</p><div class="checkbox"><input class="checkbox__input checkbox__input-mode" type="checkbox"><label class="checkbox__label">Можно курить</label></div><div class="checkbox"><input class="checkbox__input checkbox__input-mode" type="checkbox"><label class="checkbox__label">Можно с питомцами</label></div><div class="checkbox"><input class="checkbox__input checkbox__input-mode" type="checkbox"><label class="checkbox__label">Можно пригласить гостей (до 10 человек)</label></div></div></div><div class="colums"></div></div></div><script>document.querySelectorAll('.dropdown__select').forEach(function (dropDownWrapper) {
+  console.log("cli");
+	const dropDownBtn = dropDownWrapper.querySelector('.dropdown__select');
+	const dropDownList = dropDownWrapper.querySelector('.dropdown__items');
+	
+	// Клик по кнопке. Открыть/Закрыть select
+	dropDownBtn.addEventListener('click', function (e) {
+		dropDownList.classList.toggle('dropdown__items--visible');
+        this.classList.toggle('dropdown__selet--open');
+	});
+
+	// Выбор элемента списка. Запомнить выбранное значение. Закрыть дропдаун
+	dropDownListItems.forEach(function (listItem) {
+		listItem.addEventListener('click', function (e) {
+			e.stopPropagation();
+			dropDownBtn.innerText = this.innerText;
+			dropDownBtn.focus();
+			dropDownInput.value = this.dataset.value;
+			dropDownList.classList.remove('dropdown__list--visible');
+		});
+	});
+
+	// Клик снаружи дропдауна. Закрыть дропдаун
+	document.addEventListener('click', function (e) {
+		if (e.target !== dropDownBtn) {
+			dropDownBtn.classList.remove('dropdown__button--active');
+			dropDownList.classList.remove('dropdown__list--visible');
+		}
+	});
+
+	// Нажатие на Tab или Escape. Закрыть дропдаун
+	document.addEventListener('keydown', function (e) {
+		if (e.key === 'Tab' || e.key === 'Escape') {
+			dropDownBtn.classList.remove('dropdown__button--active');
+			dropDownList.classList.remove('dropdown__list--visible');
+		}
+	});
+});</script></section><section class="headers-footers"><figure class="logo-uikit"></figure><header class="header"><style>.header {
   background-color: #FFFFFF;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   height: 70px;
-  background-image: url("../bembloks/header/logo.png");
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -203,7 +494,7 @@
   background-color: #FFFFFF;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   height: 70px;
-  background-image: url("../bembloks/header/logo.png");
+  
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -11,9 +11,10 @@ div.content
     div.colums 
       +text-field("TEXT FIELD","Email","default")
       +text-field("TEXT FIELD","This is pretty awesome","default")
-      +dropdown("DROPDAWN", "Сколько гостей", "options")   
+      +dropdown("DROPDAWN", "Сколько гостей", "options") 
       +text-field("masked TEXT FIELD","ДД.ММ.ГГГГ","masked")
       +dropdown("filter date dropdown", "19 авг - 23 авг", "options")   
+      +dropdown("DROPDAWN", "Сколько гостей2", "options") 
       +text-field("subscription text field", "Email", "subscr")   
     div.colums
       div.content__checkbox
@@ -22,3 +23,5 @@ div.content
         +checkbox("Можно с питомцами", "mode")
         +checkbox("Можно пригласить гостей (до 10 человек)", "mode")
     div.colums  
+script
+  include /dropdown-block/dropdown-block.js 

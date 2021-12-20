@@ -8,17 +8,25 @@ mixin dropdown(lab, placehold, options)
     ul.dropdown__items 
       li.dropdown__item взрослые
         div.dropdown__control
-          div.dropdown__btn -
+          div.dropdown__btn.dropdown__btn-disable
+            span -
           p.dropdown__count 0
-          div.dropdown__btn +
+          div.dropdown__btn 
+            span +
       li.dropdown__item дети
         div.dropdown__control
-            div.dropdown__btn -
+            div.dropdown__btn.dropdown__btn-disable 
+              span -
             p.dropdown__count 0
-            div.dropdown__btn +
+            div.dropdown__btn 
+              span +
       li.dropdown__item младенцы
         div.dropdown__control
-          div.dropdown__btn -
+          div.dropdown__btn.dropdown__btn-disable 
+            span -
           p.dropdown__count 0
-          div.dropdown__btn +
-        
+          div.dropdown__btn 
+            span +
+      li.dropdown__item 
+        button.clear очистить
+        button.apply применить

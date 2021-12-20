@@ -1,1 +1,0 @@
-{"version":3,"file":"main.js","mappings":"mBAEAA,QAAQC,IAAIC,O","sources":["webpack://metalamp_task2/./src/index.js"],"sourcesContent":["import './styles/style.scss';\r\n\r\nconsole.log(user)"],"names":["console","log","user"],"sourceRoot":""}
