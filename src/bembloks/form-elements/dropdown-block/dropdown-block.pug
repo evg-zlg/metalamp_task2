@@ -3,6 +3,22 @@ style
 mixin dropdown(lab, placehold, options)
   div.dropdown 
     label.dropdown__label #{lab}
-      select.dropdown__select(name="dropdawn")
-        each item in ["red", "green", "blue"] 
-          option=item
+    button.dropdown__select #{placehold}
+      div.arrow 
+    ul.dropdown__items 
+      li.dropdown__item взрослые
+        div.dropdown__control
+          div.dropdown__btn -
+          p.dropdown__count 0
+          div.dropdown__btn +
+      li.dropdown__item дети
+        div.dropdown__control
+            div.dropdown__btn -
+            p.dropdown__count 0
+            div.dropdown__btn +
+      li.dropdown__item младенцы
+        div.dropdown__control
+          div.dropdown__btn -
+          p.dropdown__count 0
+          div.dropdown__btn +
+        
