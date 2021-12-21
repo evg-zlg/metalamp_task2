@@ -6,9 +6,53 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
   const dropDownMinus = dropDownWrapper.querySelectorAll(".dropdown__btn:first-child");
   const dropDownControl = dropDownWrapper.querySelector(".dropdown__control");
   const dropDownCount = dropDownWrapper.querySelector(".dropdown__count");
-  
+  let facilities = "2 спальни, 2 кровати...";
   let guests = "Сколько гостей";
   
+  //функция подсчёта удобств, возращает текст для вставки в select (обрезанный)
+  function countFacilities() {
+    let countBed = Number(dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent);
+    let countBedroom = Number(dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent);
+    let countBathroom = Number(dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent);
+    facilities = "";
+    if (countBed > 0) {
+      if (countBed == 1) {
+        facilities = "1 спальня";
+      } else if (countBed >=2 && countBed <= 4) {
+          facilities = String(countBed) +" спальни";
+      } else if (countBed > 4) {
+        facilities = String(countBed) +" спален";
+      }
+      if (countBedroom > 0 || countBathroom > 0) {
+        facilities = facilities + ", "
+      }
+    }
+    if (countBedroom > 0) {
+      if (countBedroom == 1) {
+        facilities = facilities + "1 кровать";
+      } else if (countBedroom >= 2 && countBedroom <= 4) {
+          facilities = facilities + String(countBedroom)+" кровати";
+      } else {
+          facilities = facilities + String(countBedroom)+" кроватей";
+      } 
+      if (countBathroom > 0) {
+        facilities = facilities + ", "
+      }
+    }
+    if (countBathroom > 0) {
+      if (countBathroom == 1) {
+        facilities = facilities + "1 ванная комната";
+      } else if (countBathroom >=2 && countBathroom <=4) {
+          facilities = facilities + String(countBathroom)+" ванные комнаты";
+      } else {
+          facilities = facilities + String(countBathroom)+" ванных комнат";
+      }
+    }
+    facilities = facilities.slice(0,20) + "..."
+    return facilities;
+  }
+
+  //функция подсчета гостей, возвращает текст для вставки в select
   function countGuest() {
     let countAdult = Number(dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent);
     let countChild = Number(dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent);
@@ -43,7 +87,6 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
   };
 //	Открыть / закрыть список
   dropDownBtn.addEventListener("click", function(){
-    console.log("click");
     dropDownBtn.classList.toggle("dropdown__select--open");
     dropDownItems.classList.toggle("dropdown__items--visible");
     // проверяем, есть ли кнопки
@@ -94,6 +137,8 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
       e.parentNode.childNodes[1].textContent = String(count);
       // проверяем, есть ли кнопки
       if (dropDownItems.childNodes.length > 3) {
+        // пишем в select количество гостей
+        dropDownBtn.textContent=countGuest();
         // проверяем количества, если все 0 - прячем кнопку ОЧИСТИТЬ
         if (
           dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent == 0 &&
@@ -104,8 +149,10 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
         } else {
           dropDownItems.childNodes[3].childNodes[0].classList.remove("btn--hide");
         };
+      // если кнопок нет, значит это удобства
+      } else {
+        dropDownBtn.textContent=countFacilities();
       }
-      dropDownBtn.textContent=countGuest();
     })
   })
   
@@ -122,6 +169,8 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
       e.parentNode.childNodes[1].textContent = String(count);
       // проверяем, есть ли кнопки
       if (dropDownItems.childNodes.length > 3) {
+        // пишем в select количество гостей
+        dropDownBtn.textContent=countGuest();
         // проверяем количества, если все 0 - прячем кнопку ОЧИСТИТЬ
         if (
           dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent == 0 &&
@@ -131,9 +180,11 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
           dropDownItems.childNodes[3].childNodes[0].classList.add("btn--hide");
         } else {
           dropDownItems.childNodes[3].childNodes[0].classList.remove("btn--hide");
-        };
-      }
-      dropDownBtn.textContent=countGuest();
+        } 
+      // если кнопок нет, значит это удобства; выводим удобства в select
+      } else {
+        dropDownBtn.textContent=countFacilities();
+      }  
     })
   })
   // Нажатие на ОЧИСТИТЬ, обнуляем все значения, включая проверку наличие кнопок
