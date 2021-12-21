@@ -2,6 +2,8 @@
 .content {
   max-width: 1200px;
   height: 800px;
+  display: flex;
+  flex-direction: column;
 }
 .row {
   height: 625px;

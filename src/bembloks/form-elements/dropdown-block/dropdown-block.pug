@@ -2,31 +2,63 @@ include ../button/button.pug
 style
   include dropdown-block.scss 
 mixin dropdown(lab, placehold, options)
-  div.dropdown 
-    label.dropdown__label #{lab}
-    button.dropdown__select #{placehold}
-    ul.dropdown__items 
-      li.dropdown__item взрослые
-        div.dropdown__control
-          div.dropdown__btn.dropdown__btn-disable
-            span -
-          p.dropdown__count 0
-          div.dropdown__btn 
-            span +
-      li.dropdown__item дети
-        div.dropdown__control
+  if options == "guests"
+    div.dropdown 
+      label.dropdown__label #{lab}
+      button.dropdown__select #{placehold}
+      ul.dropdown__items 
+        li.dropdown__item взрослые
+          div.dropdown__control
+            div.dropdown__btn.dropdown__btn-disable
+              span -
+            p.dropdown__count 0
+            div.dropdown__btn 
+              span +
+        li.dropdown__item дети
+          div.dropdown__control
             div.dropdown__btn.dropdown__btn-disable 
               span -
             p.dropdown__count 0
             div.dropdown__btn 
               span +
-      li.dropdown__item младенцы
-        div.dropdown__control
-          div.dropdown__btn.dropdown__btn-disable 
-            span -
-          p.dropdown__count 0
-          div.dropdown__btn 
-            span +
-      li.dropdown__item 
-        +button("очистить", mode)
-        +button("применить", mode)
+        li.dropdown__item младенцы
+          div.dropdown__control
+            div.dropdown__btn.dropdown__btn-disable 
+              span -
+            p.dropdown__count 0
+            div.dropdown__btn 
+              span +
+        li.dropdown__item 
+          +button("очистить", mode)
+          +button("применить", mode) 
+  //-else if options == "filter-date"
+   div.dropdown 
+      label.dropdown__label #{lab}
+      button.dropdown__select #{placehold} 
+  else if options == "facilities"
+    div.dropdown.dropdown-facilities 
+      label.dropdown__label #{lab}
+      button.dropdown__select #{placehold}
+      ul.dropdown__items.dropdown-facilities__items
+        li.dropdown__item спальни
+          div.dropdown__control
+            div.dropdown__btn.dropdown__btn-disable
+              span -
+            p.dropdown__count 0
+            div.dropdown__btn 
+              span + 
+        li.dropdown__item кровати
+          div.dropdown__control
+            div.dropdown__btn.dropdown__btn-disable
+              span -
+            p.dropdown__count 0
+            div.dropdown__btn 
+              span +           
+        li.dropdown__item.dropdown-facilities__item ванные комнаты
+          div.dropdown__control
+            div.dropdown__btn.dropdown__btn-disable
+              span -
+            p.dropdown__count 0
+            div.dropdown__btn 
+              span +    
+            

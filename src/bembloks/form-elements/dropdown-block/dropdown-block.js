@@ -6,8 +6,7 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
   const dropDownMinus = dropDownWrapper.querySelectorAll(".dropdown__btn:first-child");
   const dropDownControl = dropDownWrapper.querySelector(".dropdown__control");
   const dropDownCount = dropDownWrapper.querySelector(".dropdown__count");
-  const dropDownClearBtn = dropDownItems.childNodes[3].childNodes[0];
-  const dropDownApplyBtn = dropDownItems.childNodes[3].childNodes[1];
+  
   let guests = "Сколько гостей";
   
   function countGuest() {
@@ -44,17 +43,21 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
   };
 //	Открыть / закрыть список
   dropDownBtn.addEventListener("click", function(){
+    console.log("click");
     dropDownBtn.classList.toggle("dropdown__select--open");
     dropDownItems.classList.toggle("dropdown__items--visible");
-    // проверяем количества, если все 0 - прячем кнопку ОЧИСТИТЬ
-    if (
-      dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent == 0 &&
-      dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent == 0 &&
-      dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent == 0
-    ) {
-      dropDownItems.childNodes[3].childNodes[0].classList.add("btn--hide");
-    } else {
-      dropDownItems.childNodes[3].childNodes[0].classList.remove("btn--hide");
+    // проверяем, есть ли кнопки
+    if (dropDownItems.childNodes.length > 3) {
+      // проверяем количества, если все 0 - прячем кнопку ОЧИСТИТЬ
+      if (
+        dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent == 0 &&
+        dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent == 0 &&
+        dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent == 0
+      ) {
+        dropDownItems.childNodes[3].childNodes[0].classList.add("btn--hide");
+      } else {
+        dropDownItems.childNodes[3].childNodes[0].classList.remove("btn--hide");
+      };
     }
   })
 
@@ -89,16 +92,19 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
         count ++;
       }
       e.parentNode.childNodes[1].textContent = String(count);
-      // проверяем количества, если все 0 - прячем кнопку ОЧИСТИТЬ
-      if (
-        dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent == 0 &&
-        dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent == 0 &&
-        dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent == 0
-      ) {
-        dropDownItems.childNodes[3].childNodes[0].classList.add("btn--hide");
-      } else {
-        dropDownItems.childNodes[3].childNodes[0].classList.remove("btn--hide");
-      };
+      // проверяем, есть ли кнопки
+      if (dropDownItems.childNodes.length > 3) {
+        // проверяем количества, если все 0 - прячем кнопку ОЧИСТИТЬ
+        if (
+          dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent == 0 &&
+          dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent == 0 &&
+          dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent == 0
+        ) {
+          dropDownItems.childNodes[3].childNodes[0].classList.add("btn--hide");
+        } else {
+          dropDownItems.childNodes[3].childNodes[0].classList.remove("btn--hide");
+        };
+      }
       dropDownBtn.textContent=countGuest();
     })
   })
@@ -114,34 +120,41 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
         count --;
       }
       e.parentNode.childNodes[1].textContent = String(count);
-      // проверяем количества, если все 0 - прячем кнопку ОЧИСТИТЬ
-      if (
-        dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent == 0 &&
-        dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent == 0 &&
-        dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent == 0
-      ) {
-        dropDownItems.childNodes[3].childNodes[0].classList.add("btn--hide");
-      } else {
-        dropDownItems.childNodes[3].childNodes[0].classList.remove("btn--hide");
-      };
+      // проверяем, есть ли кнопки
+      if (dropDownItems.childNodes.length > 3) {
+        // проверяем количества, если все 0 - прячем кнопку ОЧИСТИТЬ
+        if (
+          dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent == 0 &&
+          dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent == 0 &&
+          dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent == 0
+        ) {
+          dropDownItems.childNodes[3].childNodes[0].classList.add("btn--hide");
+        } else {
+          dropDownItems.childNodes[3].childNodes[0].classList.remove("btn--hide");
+        };
+      }
       dropDownBtn.textContent=countGuest();
     })
   })
-  // Нажатие на ОЧИСТИТЬ, обнуляем все значения
-  dropDownClearBtn.addEventListener("click", function () {
-    dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent = 0;
-    dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent = 0; 
-    dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent = 0;
-    dropDownItems.childNodes[3].childNodes[0].classList.add("btn--hide");
-    dropDownItems.childNodes[0].childNodes[1].childNodes[0].classList.add("dropdown__btn-disable");
-    dropDownItems.childNodes[1].childNodes[1].childNodes[0].classList.add("dropdown__btn-disable");
-    dropDownItems.childNodes[2].childNodes[1].childNodes[0].classList.add("dropdown__btn-disable");
-    dropDownBtn.textContent=countGuest();
-  });
-
-  // Нажатие на ПРИМЕНИТЬ, закрываем список
-  dropDownApplyBtn.addEventListener("click", function () {
-    dropDownBtn.classList.remove("dropdown__select--open");
-    dropDownItems.classList.remove("dropdown__items--visible");
-  });
+  // Нажатие на ОЧИСТИТЬ, обнуляем все значения, включая проверку наличие кнопок
+  if (dropDownItems.childNodes.length > 3) {
+    const dropDownClearBtn = dropDownItems.childNodes[3].childNodes[0];
+    const dropDownApplyBtn = dropDownItems.childNodes[3].childNodes[1];
+    dropDownClearBtn.addEventListener("click", function () {
+      dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent = 0;
+      dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent = 0; 
+      dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent = 0;
+      dropDownItems.childNodes[3].childNodes[0].classList.add("btn--hide");
+      dropDownItems.childNodes[0].childNodes[1].childNodes[0].classList.add("dropdown__btn-disable");
+      dropDownItems.childNodes[1].childNodes[1].childNodes[0].classList.add("dropdown__btn-disable");
+      dropDownItems.childNodes[2].childNodes[1].childNodes[0].classList.add("dropdown__btn-disable");
+      dropDownBtn.textContent=countGuest();
+    });
+  
+    // Нажатие на ПРИМЕНИТЬ, закрываем список
+    dropDownApplyBtn.addEventListener("click", function () {
+      dropDownBtn.classList.remove("dropdown__select--open");
+      dropDownItems.classList.remove("dropdown__items--visible");
+    });
+  }
 });

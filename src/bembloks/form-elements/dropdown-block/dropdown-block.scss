@@ -1,7 +1,7 @@
 .dropdown {
   display: flex;
   flex-direction: column;
-  
+  width: 320px;
 }
 .dropdown__label {
   display: block;
@@ -15,7 +15,7 @@
 .dropdown__select {
   display: block;
   position: relative;
-  width: 320px;
+  width: auto;
   height: 44px;
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-sizing: border-box;
@@ -59,7 +59,7 @@
   font-family: generalFont;
   font-size: 12px;
   line-height: 15px;
-  width: 320px;
+  width: auto;
   height: 159px;
   background: #FFFFFF;
   border: 1px solid rgba(31, 32, 65, 0.5);
@@ -69,6 +69,9 @@
   text-align: left;
   display: none;
   border-top: none;
+}
+.dropdown-facilities__items {
+  height: auto;
 }
 .dropdown__items--visible {
   display: block;  
@@ -82,7 +85,10 @@
 .dropdown__item:last-child {
   margin-top: 20px;
   margin-bottom: 13px;
-
+}
+.dropdown-facilities__item:last-child {
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
 .dropdown__control {
   width: 92px;
@@ -122,4 +128,8 @@
 .dropdown__btn span {
   display: inline-block;
   margin-top: 2px;
+}
+
+.dropdown-facilities {
+  width: 266px;
 }
