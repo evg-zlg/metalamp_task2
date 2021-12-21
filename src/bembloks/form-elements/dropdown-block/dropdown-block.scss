@@ -36,7 +36,8 @@
 .dropdown__select--open {
   border-radius: 4px 4px 0 0;  
 }
-.arrow {
+.dropdown__select::after {
+  content: "";
   width: 6px;
   height: 6px;
   border-right: 2px solid rgba(31, 32, 65, 0.5);;
@@ -46,6 +47,7 @@
   right: 0;
   top: 15px;
   transform: rotate(135deg);
+  z-index: 100;
 }
 .dropdown__items {
   margin: 0;
@@ -80,6 +82,7 @@
 .dropdown__item:last-child {
   margin-top: 20px;
   margin-bottom: 13px;
+
 }
 .dropdown__control {
   width: 92px;
