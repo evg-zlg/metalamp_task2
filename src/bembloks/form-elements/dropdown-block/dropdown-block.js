@@ -6,6 +6,8 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
   const dropDownMinus = dropDownWrapper.querySelectorAll(".dropdown__btn:first-child");
   const dropDownControl = dropDownWrapper.querySelector(".dropdown__control");
   const dropDownCount = dropDownWrapper.querySelector(".dropdown__count");
+  const dropDownClearBtn = dropDownItems.childNodes[3].childNodes[0];
+  const dropDownApplyBtn = dropDownItems.childNodes[3].childNodes[1];
   let countGuest = 0;
   let guests = 'Сколько гостей';
 
@@ -13,6 +15,16 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
   dropDownBtn.addEventListener("click", function(){
     dropDownBtn.classList.toggle("dropdown__select--open");
     dropDownItems.classList.toggle("dropdown__items--visible");
+    // проверяем количества, если все 0 - прячем кнопку ОЧИСТИТЬ
+    if (
+      dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent == 0 &&
+      dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent == 0 &&
+      dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent == 0
+    ) {
+      dropDownItems.childNodes[3].childNodes[0].classList.add("btn--hide");
+    } else {
+      dropDownItems.childNodes[3].childNodes[0].classList.remove("btn--hide");
+    }
   })
 
 // Клик снаружи дропдауна. Закрыть дропдаун
@@ -40,7 +52,6 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
     e.addEventListener("click", function () {
       let count = Number(e.parentNode.childNodes[1].textContent);
       if (count == 0) {
-        console.log("parrent=", count);
         e.parentNode.childNodes[0].classList.remove("dropdown__btn-disable");
         count ++;
         countGuest ++;
@@ -48,6 +59,16 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
         count ++;
       }
       e.parentNode.childNodes[1].textContent = String(count);
+      // проверяем количества, если все 0 - прячем кнопку ОЧИСТИТЬ
+      if (
+        dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent == 0 &&
+        dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent == 0 &&
+        dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent == 0
+      ) {
+        dropDownItems.childNodes[3].childNodes[0].classList.add("btn--hide");
+      } else {
+        dropDownItems.childNodes[3].childNodes[0].classList.remove("btn--hide");
+      }
     })
   })
   
@@ -62,7 +83,26 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
         count --;
       }
       e.parentNode.childNodes[1].textContent = String(count);
+      // проверяем количества, если все 0 - прячем кнопку ОЧИСТИТЬ
+      if (
+        dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent == 0 &&
+        dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent == 0 &&
+        dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent == 0
+      ) {
+        dropDownItems.childNodes[3].childNodes[0].classList.add("btn--hide");
+      } else {
+        dropDownItems.childNodes[3].childNodes[0].classList.remove("btn--hide");
+      }
     })
   })
-
+  // Нажатие на ОЧИСТИТЬ, обнуляем все значения
+  dropDownClearBtn.addEventListener("click", function () {
+    dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent = 0;
+    dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent = 0; 
+    dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent = 0;
+    dropDownItems.childNodes[3].childNodes[0].classList.add("btn--hide");
+    dropDownItems.childNodes[0].childNodes[1].childNodes[0].classList.add("dropdown__btn-disable");
+    dropDownItems.childNodes[1].childNodes[1].childNodes[0].classList.add("dropdown__btn-disable");
+    dropDownItems.childNodes[2].childNodes[1].childNodes[0].classList.add("dropdown__btn-disable");
+  });
 });

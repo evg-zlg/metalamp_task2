@@ -1,3 +1,4 @@
+include ../button/button.pug
 style
   include dropdown-block.scss 
 mixin dropdown(lab, placehold, options)
@@ -28,5 +29,5 @@ mixin dropdown(lab, placehold, options)
           div.dropdown__btn 
             span +
       li.dropdown__item 
-        button.clear очистить
-        button.apply применить
+        +button("очистить", mode)
+        +button("применить", mode)

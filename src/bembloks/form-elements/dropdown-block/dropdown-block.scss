@@ -77,6 +77,10 @@
   align-items: center;
   justify-content: space-between;
 }
+.dropdown__item:last-child {
+  margin-top: 20px;
+  margin-bottom: 13px;
+}
 .dropdown__control {
   width: 92px;
   display: flex;
