@@ -37,15 +37,37 @@
 .text-field__input:hover {
   border: 1px solid rgba(31, 32, 65, 0.5);
 }
+
+.text-field__input--hover {
+  border: 1px solid rgba(31, 32, 65, 0.5)
+}
+.text-field__input--hover::placeholder {
+  color: rgba(31, 32, 65, 0.75);
+}
 .text-field__input:focus {
-  border: 1px solid rgba(31, 32, 65, 0.5);
+  border: 1px solid rgba(38, 65, 31, 0.5);
 }
 
+
 .arrow {
+  display: inline-block;
+  cursor: pointer;
   position: absolute;
   top: 40px;
   right: 15px;
-  width: 30px;
-  height: 30px;
-  background-image: url("/src/images/arrow_subscr.svg");
+  width: 20px;
+  height: 3px;
+  background: #8BA4F9;
+}
+.arrow::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-right: 3px solid #8BA4F9;
+  border-top: 3px solid #8BA4F9;
+  margin-right: 15px;
+  position: absolute;
+  right: -15;
+  top: -6px;
+  transform: rotate(45deg);
 }

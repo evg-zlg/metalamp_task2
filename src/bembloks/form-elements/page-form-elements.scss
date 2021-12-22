@@ -21,6 +21,25 @@
   flex-direction: column;
   justify-content: space-between;
 }
+.page-form-elements__text-block {
+  position: relative;
+}
+.page-form-elements__caption {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(31, 32, 65, 0.5);
+  text-transform: uppercase;
+}
+.page-form-elements__dates {
+  display: flex;
+  justify-content: space-between;
+}
 .content__checkbox {
   width: 222px;
   height: 130px;

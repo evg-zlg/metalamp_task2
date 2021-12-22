@@ -60,5 +60,9 @@ mixin dropdown(lab, placehold, options)
               span -
             p.dropdown__count 0
             div.dropdown__btn 
-              span +    
+              span +
+  else if options == "date-dropdown"    
+    div.dropdown.dropdown-date 
+      label.dropdown__label #{lab}
+      button.dropdown__select #{placehold}
             

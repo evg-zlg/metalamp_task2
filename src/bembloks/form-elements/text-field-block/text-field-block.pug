@@ -6,11 +6,15 @@ mixin text-field(lab, placehol, mode)
     div.text-field
       label.text-field__label #{lab}
         input(type="text" placeholder=placehol class="text-field__input")  
+  else if mode == "hover"
+    div.text-field
+      label.text-field__label #{lab}
+        input(type="text" placeholder=placehol class="text-field__input text-field__input--hover")  
   else if mode == "subscr"
     div.text-field
       label.text-field__label #{lab}
         input(type="text" placeholder=placehol class="text-field__input text-field__input--subscr")
-        div.arrow
+        span.arrow
 // - доделать 
  //- else if mode = "masked"
     script
