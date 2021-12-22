@@ -7,8 +7,8 @@
     opacity: 0;
 }
 .checkbox__label {
-  display: inline-flex;
-  align-items: center;
+  display: inline-block;
+  position: relative;
   user-select: none;
   font-family: generalFont;
   font-style: normal;
@@ -16,52 +16,35 @@
   font-size: 14px;
   line-height: 18px;
   color: rgba(31, 32, 65, 0.5);
+  cursor: pointer;
+  padding-left: 30px;
+  
 }
-.checkbox__label::before {
+.checkbox__mark::before {
   content: '';
-  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 20px;
   height: 20px;
-  flex-shrink: 0;
-  flex-grow: 0;
-  border: 1px solid #adb5bd;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  background-color: #fff;
   border-radius: 4px;
   margin-right: 0.5em;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 50% 50%;
 }
-.checkbox__label::after {
-  content: '';
-  display: inline-block;
-  border: 1px rgb(68, 67, 67);
-  width: 20px;
-  height: 20px;
+
+.checkbox__input:checked + .checkbox__mark::after{
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 4px;
+  left: 7px;
+  top: 7px;
+  border-left: 2px solid #8BA4F9;
+  border-bottom: 2px solid #8BA4F9;
+  transform: rotate(-45deg);
 
 }
-}
-.checkbox__input:checked+label::after {
-  content: '';
-
-}
-/* стили при наведении курсора на checkbox */
-.checkbox__input:not(:disabled):not(:checked)+label:hover::before {
-  border-color: #b3d7ff;
-}
-/* стили для активного состояния чекбокса (при нажатии на него) */
-.checkbox__input:not(:disabled):active+label::before {
-  background-color: #b3d7ff;
-  border-color: #b3d7ff;
-}
-/* стили для чекбокса, находящегося в фокусе */
-.checkbox__input:focus+label::before {
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
-.checkbox__input:focus:not(:checked)+label::before {
-  border-color: #80bdff;
-}
-/* стили для чекбокса, находящегося в состоянии disabled */
-.checkbox__input:disabled+label::before {
-  background-color: #e9ecef;
-}
+.checkbox__input:checked + .checkbox__mark::before {
+  border: 1px solid #BC9CFF;
+} 
