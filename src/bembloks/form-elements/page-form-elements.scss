@@ -1,7 +1,10 @@
 
-.content {
+.page-form-elements__content {
   max-width: 1200px;
   height: 800px;
+  padding-left: 153px;
+  padding-top: 37px;
+  padding-bottom: 0;
   display: flex;
   flex-direction: column;
 }
@@ -13,7 +16,7 @@
   
 }
 .colums {
-  height: 615px;
+  height: 515px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

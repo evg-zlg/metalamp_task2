@@ -4,6 +4,7 @@
 }
 .text-field__label {
   display: block;
+  position: relative;
   font-family: generalFont;
   font-weight: bold;
   font-size: 12px;
@@ -39,9 +40,12 @@
 .text-field__input:focus {
   border: 1px solid rgba(31, 32, 65, 0.5);
 }
-.text-field__input-masked {
 
-}
-.text-field__input-subscr {
-
+.arrow {
+  position: absolute;
+  top: 40px;
+  right: 15px;
+  width: 30px;
+  height: 30px;
+  background-image: url("/src/images/arrow_subscr.svg");
 }

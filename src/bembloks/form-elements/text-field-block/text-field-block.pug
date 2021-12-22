@@ -2,6 +2,23 @@ style
   include text-field-block.scss
 // mode - text, masked, subscription
 mixin text-field(lab, placehol, mode)
-  div.text-field
-    label.text-field__label #{lab}
-      input(type="text" placeholder=placehol class="text-field__input"+" text-field__input-"+mode)  
+  if mode == "default"
+    div.text-field
+      label.text-field__label #{lab}
+        input(type="text" placeholder=placehol class="text-field__input")  
+  else if mode == "subscr"
+    div.text-field
+      label.text-field__label #{lab}
+        input(type="text" placeholder=placehol class="text-field__input text-field__input--subscr")
+        div.arrow
+// - доделать 
+ //- else if mode = "masked"
+    script
+      include jquery-3.6.0.js
+    script
+      include jquery.maskedinput.js
+    div.text-field
+      label.text-field__label #{lab}
+        input(type="text" id="text-mask" placeholder=placehol class="text-field__input text-field__input--mask")
+        script. 
+          $(function() { $("#text-mask").mask("99.99.9999", {placeholder: "ДД.ММ.ГГГГ"})})
