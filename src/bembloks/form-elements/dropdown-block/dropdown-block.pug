@@ -1,24 +1,37 @@
 include ../button/button.pug
 style
   include dropdown-block.scss 
-mixin dropdown(lab, placehold, options)
+mixin dropdown(lab, placehold, options, state, countGuests)
   if options == "guests"
     div.dropdown 
       label.dropdown__label #{lab}
-      button.dropdown__select #{placehold}
-      ul.dropdown__items 
+      if countGuests=="threeGuests"
+        button(class="dropdown__select dropdown__select--"+state) 3 гостя
+      else 
+        button(class="dropdown__select dropdown__select--"+state) #{placehold} 
+      ul(class="dropdown__items dropdown__items--"+state)
         li.dropdown__item взрослые
           div.dropdown__control
-            div.dropdown__btn.dropdown__btn-disable
-              span -
-            p.dropdown__count 0
+            if countGuests=="threeGuests"
+              div.dropdown__btn
+                span -
+              p.dropdown__count 2
+            else 
+              div.dropdown__btn.dropdown__btn-disable
+                span -
+              p.dropdown__count 0
             div.dropdown__btn 
               span +
         li.dropdown__item дети
           div.dropdown__control
-            div.dropdown__btn.dropdown__btn-disable 
-              span -
-            p.dropdown__count 0
+            if countGuests=="threeGuests"
+              div.dropdown__btn
+                span -
+              p.dropdown__count 1
+            else 
+              div.dropdown__btn.dropdown__btn-disable
+                span -
+              p.dropdown__count 0
             div.dropdown__btn 
               span +
         li.dropdown__item младенцы
@@ -29,17 +42,20 @@ mixin dropdown(lab, placehold, options)
             div.dropdown__btn 
               span +
         li.dropdown__item 
-          +button("очистить", mode)
-          +button("применить", mode) 
+          if countGuests=="threeGuests"
+            +button("очистить")
+          else 
+            +button("очистить", "hide")
+          +button("применить") 
   //-else if options == "filter-date"
    div.dropdown 
       label.dropdown__label #{lab}
       button.dropdown__select #{placehold} 
   else if options == "facilities"
-    div.dropdown.dropdown-facilities 
+    div(class="dropdown dropdown-facilities" + " dropdown-facilities--" + state)
       label.dropdown__label #{lab}
-      button.dropdown__select #{placehold}
-      ul.dropdown__items.dropdown-facilities__items
+      button(class="dropdown__select" + " dropdown__select--"+ state) #{placehold}
+      ul(class="dropdown__items dropdown-facilities__items dropdown__items--"+state)
         li.dropdown__item спальни
           div.dropdown__control
             div.dropdown__btn.dropdown__btn-disable

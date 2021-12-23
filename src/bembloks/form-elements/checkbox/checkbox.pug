@@ -4,6 +4,9 @@ style
 mixin checkbox(lab, mode)
   div.checkbox
     label.checkbox__label #{lab}
-      input(type="checkbox" class="checkbox__input"+" checkbox__input-"+mode)
+      if mode == "checked"
+        input(type="checkbox" checked class="checkbox__input" )
+      else
+        input(type="checkbox" class="checkbox__input" ) 
       span.checkbox__mark  
     

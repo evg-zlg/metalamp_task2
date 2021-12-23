@@ -24,17 +24,24 @@ div.page-form-elements__content
       +text-field("subscription text field", "Email", "subscr")   
     div.colums
       div.content__checkbox
-        p checkbox buttons
+        p.types__h3 checkbox buttons
         +checkbox("Можно курить", "mode")
-        +checkbox("Можно с питомцами", "mode")
-        +checkbox("Можно пригласить гостей (до 10 человек)", "mode")
+        +checkbox("Можно с питомцами", "checked")
+        +checkbox("Можно пригласить гостей (до 10 человек)", "checked")
     div.colums  
       p range slider 
       p buttons 
   div.row
-    div.colums     
-      +dropdown("dropdown", "2 спальни, 2 кровати...", "facilities")
-     
-
+    div.colums
+      div.page-form-elements__text-block      
+        +dropdown("dropdown", "2 спальни, 2 кровати...", "facilities")
+        label.page-form-elements__caption default
+      div.page-form-elements__text-block  
+        +dropdown("dropdown", "2 спальни, 2 кровати...", "facilities", "open")
+        label.page-form-elements__caption expanded
+    div.colums
+      +dropdown("DROPDAWN", "Сколько гостей", "guests", "open")
+    div.colums
+      +dropdown("DROPDAWN", "Сколько гостей", "guests", "open", "threeGuests")
 script
   include /dropdown-block/dropdown-block.js 

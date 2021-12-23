@@ -89,7 +89,7 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
   //	Открыть / закрыть список
     dropDownBtn.addEventListener("click", function(){
       dropDownBtn.classList.toggle("dropdown__select--open");
-      dropDownItems.classList.toggle("dropdown__items--visible");
+      dropDownItems.classList.toggle("dropdown__items--open");
       // проверяем, есть ли кнопки
       if (dropDownItems.childNodes.length > 3) {
         // проверяем количества, если все 0 - прячем кнопку ОЧИСТИТЬ
@@ -111,7 +111,7 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
   //      console.log( e.target )
   //    } else {
   //      dropDownBtn.classList.remove("dropdown__select--open");
-  //      dropDownItems.classList.remove("dropdown__items--visible");
+  //      dropDownItems.classList.remove("dropdown__items--open");
   //      console.log( e.target )
   //    }
   //    console.log( e.target )
@@ -121,7 +121,7 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") {
         dropDownBtn.classList.remove("dropdown__select--open");
-        dropDownItems.classList.remove("dropdown__items--visible");
+        dropDownItems.classList.remove("dropdown__items--open");
       }
     });
 
@@ -206,7 +206,7 @@ document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
       // Нажатие на ПРИМЕНИТЬ, закрываем список
       dropDownApplyBtn.addEventListener("click", function () {
         dropDownBtn.classList.remove("dropdown__select--open");
-        dropDownItems.classList.remove("dropdown__items--visible");
+        dropDownItems.classList.remove("dropdown__items--open");
       });
     }
     }
