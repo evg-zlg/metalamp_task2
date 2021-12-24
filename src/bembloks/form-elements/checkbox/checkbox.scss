@@ -10,6 +10,7 @@
   display: inline-block;
   position: relative;
   user-select: none;
+  max-width: 192px;
   font-family: generalFont;
   font-style: normal;
   font-weight: normal;
@@ -27,7 +28,7 @@
   top: 0;
   width: 20px;
   height: 20px;
-  border: 1px solid rgba(31, 32, 65, 0.25);
+  border: 1.5px solid rgba(31, 32, 65, 0.25);
   background-color: #fff;
   border-radius: 4px;
   margin-right: 0.5em;
@@ -46,5 +47,5 @@
 
 }
 .checkbox__input:checked + .checkbox__mark::before {
-  border: 1px solid #BC9CFF;
+  border: 1.5px solid #BC9CFF;
 } 

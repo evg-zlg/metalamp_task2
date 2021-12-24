@@ -1,6 +1,8 @@
 include /text-field-block/text-field-block.pug
 include /dropdown-block/dropdown-block.pug
 include /checkbox/checkbox.pug
+include /radio-buttons/radio-buttons.pug
+include /toggle/toggle.pug
 style 
   include page-form-elements.scss
 header.header-pages-uikit
@@ -28,6 +30,15 @@ div.page-form-elements__content
         +checkbox("Можно курить", "mode")
         +checkbox("Можно с питомцами", "checked")
         +checkbox("Можно пригласить гостей (до 10 человек)", "checked")
+      div.content__radio
+        p.types__h3 radio buttons
+        div.content__radio-buttons
+          +radio-button("Мужчина", "sex", "checked")
+          +radio-button("Женщина", "sex", "")
+      div.content__toggle  
+        p.types__h3 toggle
+        +toggle("Получать спецпредложения", "checked")
+        +toggle("Получать спецпредложения", "")
     div.colums  
       p range slider 
       p buttons 
@@ -45,3 +56,5 @@ div.page-form-elements__content
       +dropdown("DROPDAWN", "Сколько гостей", "guests", "open", "threeGuests")
 script
   include /dropdown-block/dropdown-block.js 
+script 
+  include /radio-buttons/radio-buttons.js

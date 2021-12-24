@@ -1,0 +1,10 @@
+style
+  include radio-buttons.scss
+
+mixin radio-button(lab, name, mode)
+    label(class="radio-button__label radio-button__label--"+mode) #{lab}
+      if mode == "checked"
+        input(type="radio" name="#{name}" checked class="radio__input radio__input--"+mode)
+      else
+        input(type="radio" name="#{name}" class="radio__input radio__input--"+mode) 
+      span(class="radio__mark radio__mark--"+mode)
