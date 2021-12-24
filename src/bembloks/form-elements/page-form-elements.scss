@@ -68,7 +68,10 @@
   margin: 0;
   padding: 0; 
 }
-.content__radio p {
+.content__radio p, 
+.content__toggle p,
+.content__like-button p
+{
   margin-bottom: 16px;
 }
 .content__toggle {
@@ -76,7 +79,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-bottom: 44.44px;
 }
-.content__toggle p {
-  margin-bottom: 16px;
+.content__like-buttons-group {
+  width: 90px;
+  display: flex;
+  justify-content: space-between;
 }

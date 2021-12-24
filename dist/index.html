@@ -59,34 +59,12 @@
   text-align: right;
   margin: 0;
   margin-right: 30px;
-
 }
-.types__h1 {
-  font-weight: bold;
-  margin: 0;
-  margin-left: 4px;
-  font-size: 24px;
-  line-height: 29px;
-  letter-spacing: 0.5px;
+.content__checkbox {
+  margin-bottom: 41px;
 }
-.types__h2 {
-  font-weight: bold;
-  margin: 0;
-  margin-left: 3px;
-  margin-top: 1px;
-  font-size: 19px;
-  line-height: 23px;
-  letter-spacing: 0.3px;
-
-}
-.types__h3 {
-  font-weight: bold;
-  margin: 0;
-  margin-left: 4px;
-  margin-top: 2px
-}
-.types__body {
-  margin: 0;
+.content__radio {
+  width: 201px;
 }</style><header class="header-pages-uikit"><figure class="logo-uikit"></figure><h2 class="page-title">Colors & type</h2></header><div class="page-colors-type__content"><div class="colors"><style>.color-block {
   width: 290px;
   display: flex;
@@ -180,20 +158,39 @@
 .text-field__input:hover {
   border: 1px solid rgba(31, 32, 65, 0.5);
 }
-.text-field__input:focus {
-  border: 1px solid rgba(31, 32, 65, 0.5);
+
+.text-field__input--hover {
+  border: 1px solid rgba(31, 32, 65, 0.5)
 }
-.text-field__input--subscr {
-  
+.text-field__input--hover::placeholder {
+  color: rgba(31, 32, 65, 0.75);
+}
+.text-field__input:focus {
+  border: 1px solid rgba(38, 65, 31, 0.5);
 }
 
+
 .arrow {
+  display: inline-block;
+  cursor: pointer;
   position: absolute;
   top: 40px;
   right: 15px;
-  width: 30px;
-  height: 30px;
-  background-image: url("/src/images/arrow_subscr.svg");
+  width: 20px;
+  height: 3px;
+  background: #8BA4F9;
+}
+.arrow::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-right: 3px solid #8BA4F9;
+  border-top: 3px solid #8BA4F9;
+  margin-right: 15px;
+  position: absolute;
+  right: -15;
+  top: -6px;
+  transform: rotate(45deg);
 }</style><style>.btn {
   margin: 0;
   padding: 0;
@@ -230,6 +227,7 @@
 }
 .dropdown__select {
   display: block;
+  margin-top: 5px;
   position: relative;
   width: auto;
   height: 44px;
@@ -250,7 +248,8 @@
   border: 1px solid rgba(31, 32, 65, 0.5);
 }
 .dropdown__select--open {
-  border-radius: 4px 4px 0 0;  
+  border-radius: 4px 4px 0 0;
+  border-color: rgba(31, 32, 65, 0.5);  
 }
 .dropdown__select::after {
   content: "";
@@ -289,7 +288,7 @@
 .dropdown-facilities__items {
   height: auto;
 }
-.dropdown__items--visible {
+.dropdown__items--open {
   display: block;  
 }
 .dropdown__item {
@@ -348,6 +347,9 @@
 
 .dropdown-facilities {
   width: 266px;
+}
+.dropdown-date {
+  width: 150px;
 }</style><style>.checkbox {
   max-width: 222px;
 }
@@ -357,66 +359,142 @@
     opacity: 0;
 }
 .checkbox__label {
-  display: inline-flex;
-  align-items: center;
+  display: inline-block;
+  position: relative;
   user-select: none;
+  max-width: 192px;
   font-family: generalFont;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 18px;
   color: rgba(31, 32, 65, 0.5);
+  cursor: pointer;
+  padding-left: 30px;
+  
 }
-.checkbox__label::before {
+.checkbox__mark::before {
   content: '';
-  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 20px;
   height: 20px;
-  flex-shrink: 0;
-  flex-grow: 0;
-  border: 1px solid #adb5bd;
+  border: 1.5px solid rgba(31, 32, 65, 0.25);
+  background-color: #fff;
   border-radius: 4px;
   margin-right: 0.5em;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 50% 50%;
 }
-.checkbox__label::after {
-  content: '';
+
+.checkbox__input:checked + .checkbox__mark::after{
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 4px;
+  left: 7px;
+  top: 7px;
+  border-left: 2px solid #8BA4F9;
+  border-bottom: 2px solid #8BA4F9;
+  transform: rotate(-45deg);
+
+}
+.checkbox__input:checked + .checkbox__mark::before {
+  border: 1.5px solid #BC9CFF;
+}</style><style>.radio-button__label {
   display: inline-block;
-  border: 1px rgb(68, 67, 67);
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.5);
+  cursor: pointer;
+  position: relative;
+  padding-left: 30px;
+}
+.radio-button__label--checked {
+  color: rgba(31, 32, 65, 0.75);
+}
+.radio__input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.radio__mark::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
   width: 20px;
   height: 20px;
+  border: 1.5px solid rgba(31, 32, 65, 0.25);;
+  border-radius: 50%;
+  background-color: #ffffff;    
+}
+.radio-button__label .radio__input:checked {
+  color: rgba(31, 32, 65, 0.75);
+}
+.radio__input:checked + .radio__mark::after{
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  left: 5px;
+  top: 5px;
+  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  border-radius: 50%;
+}
+.radio__input:checked + .radio__mark::before {
+  border: 1.5px solid #BC9CFF; 
+}</style><style>.toggle__label {
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  cursor: pointer;
+  position: relative;
+  padding-left: 50px;
+}
 
+.toggle__input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
 }
-}
-.checkbox__input:checked+label::after {
+.toggle__mark::before {
   content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 20px;
+  border: 1.5px solid rgba(31, 32, 65, 0.25);
+  background-color: #fff;
+  border-radius: 20px;  
+}
+.toggle__input:checked + .toggle__mark::before {
+  border: 1.5px solid #BC9CFF;
+}
+.toggle__mark::after{
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  left: 5px;
+  top: 4.5px;
+  background: rgba(31, 32, 65, 0.25);;
+  border-radius: 50%;
+}
 
-}
-/* стили при наведении курсора на checkbox */
-.checkbox__input:not(:disabled):not(:checked)+label:hover::before {
-  border-color: #b3d7ff;
-}
-/* стили для активного состояния чекбокса (при нажатии на него) */
-.checkbox__input:not(:disabled):active+label::before {
-  background-color: #b3d7ff;
-  border-color: #b3d7ff;
-}
-/* стили для чекбокса, находящегося в фокусе */
-.checkbox__input:focus+label::before {
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
-/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
-.checkbox__input:focus:not(:checked)+label::before {
-  border-color: #80bdff;
-}
-/* стили для чекбокса, находящегося в состоянии disabled */
-.checkbox__input:disabled+label::before {
-  background-color: #e9ecef;
-}</style><style>.page-form-elements__content {
+.toggle__input:checked + .toggle__mark::after{
+  content: "";
+  position: absolute;
+  left: 23px;
+  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+}</style><style></style><style>.page-form-elements__content {
   max-width: 1200px;
-  height: 800px;
+  height: auto;
   padding-left: 153px;
   padding-top: 37px;
   padding-bottom: 0;
@@ -424,16 +502,47 @@
   flex-direction: column;
 }
 .row {
-  height: 625px;
+  height: 515px;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  
+  position: relative;
 }
+.row:nth-child(2) {
+  height: 270px;
+}
+
 .colums {
-  height: 515px;
+  max-height: 515px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+.colums:nth-child(2) {
+  position: absolute;
+  left: 448px;
+}
+.colums:nth-child(3) {
+  position: absolute;
+  left: 839px;
+}
+.page-form-elements__text-block {
+  position: relative;
+}
+.page-form-elements__caption {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(31, 32, 65, 0.5);
+  text-transform: uppercase;
+}
+.page-form-elements__dates {
+  display: flex;
   justify-content: space-between;
 }
 .content__checkbox {
@@ -442,153 +551,122 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+}
+.content__radio-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40.56px;
 }
 .content__checkbox p {
   margin: 0;
-  padding: 0;
-  
-}</style><header class="header-pages-uikit"><figure class="logo-uikit"></figure><h2 class="page-title">Form elements</h2></header><div class="page-form-elements__content"><div class="row"><div class="colums"><div class="text-field"><label class="text-field__label">TEXT FIELD<input class="text-field__input" placeholder="Email"></label></div><div class="text-field"><label class="text-field__label">TEXT FIELD<input class="text-field__input" placeholder="This is pretty awesome"></label></div><div class="dropdown"><label class="dropdown__label">DROPDAWN</label><button class="dropdown__select">Сколько гостей</button><ul class="dropdown__items"><li class="dropdown__item">взрослые<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item">дети<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item">младенцы<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item"><button class="btn">очистить</button><button class="btn">применить</button></li></ul></div><div class="text-field"><label class="text-field__label">subscription text field<input class="text-field__input text-field__input--subscr" placeholder="Email"><div class="arrow"></div></label></div></div><div class="colums"><div class="content__checkbox"><p>checkbox buttons</p><div class="checkbox"><input class="checkbox__input checkbox__input-mode" type="checkbox"><label class="checkbox__label">Можно курить</label></div><div class="checkbox"><input class="checkbox__input checkbox__input-mode" type="checkbox"><label class="checkbox__label">Можно с питомцами</label></div><div class="checkbox"><input class="checkbox__input checkbox__input-mode" type="checkbox"><label class="checkbox__label">Можно пригласить гостей (до 10 человек)</label></div></div></div><div class="colums"><p>range slider</p><p>buttons</p></div></div><div class="row"><div class="colums"><div class="dropdown dropdown-facilities"><label class="dropdown__label">dropdown</label><button class="dropdown__select">2 спальни, 2 кровати...</button><ul class="dropdown__items dropdown-facilities__items"><li class="dropdown__item">спальни<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">2</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item">кровати<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">2</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item dropdown-facilities__item">ванные комнаты<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li></ul></div></div></div></div><script>document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
-  const dropDownBtn = dropDownWrapper.querySelector(".dropdown__select");
-  const dropDownItems = dropDownWrapper.querySelector(".dropdown__items");
-  const dropDownItem = dropDownWrapper.querySelector(".dropdown__item");
-  const dropDownPlus = dropDownWrapper.querySelectorAll(".dropdown__btn:last-child");
-  const dropDownMinus = dropDownWrapper.querySelectorAll(".dropdown__btn:first-child");
-  const dropDownControl = dropDownWrapper.querySelector(".dropdown__control");
-  const dropDownCount = dropDownWrapper.querySelector(".dropdown__count");
-  let facilities = "2 спальни, 2 кровати...";
-  let guests = "Сколько гостей";
-  
-  //функция подсчёта удобств, возращает текст для вставки в select (обрезанный)
-  function countFacilities() {
-    let countBed = Number(dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent);
-    let countBedroom = Number(dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent);
-    let countBathroom = Number(dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent);
-    facilities = "";
-    if (countBed > 0) {
-      if (countBed == 1) {
-        facilities = "1 спальня";
-      } else if (countBed >=2 && countBed <= 4) {
-          facilities = String(countBed) +" спальни";
-      } else if (countBed > 4) {
-        facilities = String(countBed) +" спален";
+  padding: 0; 
+}
+.content__radio p, 
+.content__toggle p,
+.content__like-button p
+{
+  margin-bottom: 16px;
+}
+.content__toggle {
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 44.44px;
+}</style><header class="header-pages-uikit"><figure class="logo-uikit"></figure><h2 class="page-title">Form elements</h2></header><div class="page-form-elements__content"><div class="row"><div class="colums"><div class="page-form-elements__text-block"><div class="text-field"><label class="text-field__label">TEXT FIELD<input class="text-field__input" placeholder="Email"></label></div><label class="page-form-elements__caption">default</label></div><div class="page-form-elements__text-block"><div class="text-field"><label class="text-field__label">TEXT FIELD<input class="text-field__input text-field__input--hover" placeholder="This is pretty awesome"></label></div><label class="page-form-elements__caption">Hover / Focus</label></div><div class="dropdown"><label class="dropdown__label">DROPDAWN</label><button class="dropdown__select dropdown__select--undefined">Сколько гостей</button><ul class="dropdown__items dropdown__items--undefined"><li class="dropdown__item">взрослые<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item">дети<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item">младенцы<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item"><button class="btn btn--hide">очистить</button><button class="btn btn--undefined">применить</button></li></ul></div><div class="text-field"><label class="text-field__label">masked TEXT FIELD<input class="text-field__input" placeholder="ДД.ММ.ГГГГ"></label></div><div class="page-form-elements__dates"><div class="dropdown dropdown-date"><label class="dropdown__label">date dropdown</label><button class="dropdown__select">ДД.ММ.ГГГГ</button></div><div class="dropdown dropdown-date"><label class="dropdown__label">date dropdown</label><button class="dropdown__select">19.08.2019</button></div></div><div class="text-field"><label class="text-field__label">subscription text field<input class="text-field__input text-field__input--subscr" placeholder="Email"><span class="arrow"></span></label></div></div><div class="colums"><div class="content__checkbox"><p class="types__h3">checkbox buttons</p><div class="checkbox"><label class="checkbox__label">Можно курить<input class="checkbox__input" type="checkbox"><span class="checkbox__mark"></span></label></div><div class="checkbox"><label class="checkbox__label">Можно с питомцами<input class="checkbox__input" type="checkbox" checked="checked"><span class="checkbox__mark"></span></label></div><div class="checkbox"><label class="checkbox__label">Можно пригласить гостей (до 10 человек)<input class="checkbox__input" type="checkbox" checked="checked"><span class="checkbox__mark"></span></label></div></div><div class="content__radio"><p class="types__h3">radio buttons</p><div class="content__radio-buttons"><label class="radio-button__label radio-button__label--checked">Мужчина<input class="radio__input radio__input--checked" type="radio" name="#{name}" checked="checked"><span class="radio__mark radio__mark--checked"></span></label><label class="radio-button__label radio-button__label--">Женщина<input class="radio__input radio__input--" type="radio" name="#{name}"><span class="radio__mark radio__mark--"></span></label></div></div><div class="content__toggle"><p class="types__h3">toggle</p><div class="toggle"><label class="toggle__label">Получать спецпредложения<input class="toggle__input" type="checkbox" checked="checked"><span class="toggle__mark"></span></label></div><div class="toggle"><label class="toggle__label">Получать спецпредложения<input class="toggle__input" type="checkbox"><span class="toggle__mark"></span></label></div></div><div class="content__like-button"><p class="types__h3">like button</p><div class="like-button"><button class="like-button__btn">like</button></div><span class="material-icons">face</span></div></div><div class="colums"><p>range slider</p><p>buttons</p></div></div><div class="row"><div class="colums"><div class="page-form-elements__text-block"><div class="dropdown dropdown-facilities dropdown-facilities--undefined"><label class="dropdown__label">dropdown</label><button class="dropdown__select dropdown__select--undefined">2 спальни, 2 кровати...</button><ul class="dropdown__items dropdown-facilities__items dropdown__items--undefined"><li class="dropdown__item">спальни<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">2</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item">кровати<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">2</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item dropdown-facilities__item">ванные комнаты<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li></ul></div><label class="page-form-elements__caption">default</label></div><div class="page-form-elements__text-block"><div class="dropdown dropdown-facilities dropdown-facilities--open"><label class="dropdown__label">dropdown</label><button class="dropdown__select dropdown__select--open">2 спальни, 2 кровати...</button><ul class="dropdown__items dropdown-facilities__items dropdown__items--open"><li class="dropdown__item">спальни<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">2</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item">кровати<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">2</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item dropdown-facilities__item">ванные комнаты<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li></ul></div><label class="page-form-elements__caption">expanded</label></div></div><div class="colums"><div class="dropdown"><label class="dropdown__label">DROPDAWN</label><button class="dropdown__select dropdown__select--open">Сколько гостей</button><ul class="dropdown__items dropdown__items--open"><li class="dropdown__item">взрослые<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item">дети<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item">младенцы<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item"><button class="btn btn--hide">очистить</button><button class="btn btn--undefined">применить</button></li></ul></div></div><div class="colums"><div class="dropdown"><label class="dropdown__label">DROPDAWN</label><button class="dropdown__select dropdown__select--open">3 гостя</button><ul class="dropdown__items dropdown__items--open"><li class="dropdown__item">взрослые<div class="dropdown__control"><div class="dropdown__btn"><span>-</span></div><p class="dropdown__count">2</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item">дети<div class="dropdown__control"><div class="dropdown__btn"><span>-</span></div><p class="dropdown__count">1</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item">младенцы<div class="dropdown__control"><div class="dropdown__btn dropdown__btn-disable"><span>-</span></div><p class="dropdown__count">0</p><div class="dropdown__btn"><span>+</span></div></div></li><li class="dropdown__item"><button class="btn btn--undefined">очистить</button><button class="btn btn--undefined">применить</button></li></ul></div></div></div></div><script>document.querySelectorAll('.dropdown').forEach(function (dropDownWrapper) {
+  if (!dropDownWrapper.classList.contains("dropdown-date")) {
+    const dropDownBtn = dropDownWrapper.querySelector(".dropdown__select");
+    const dropDownItems = dropDownWrapper.querySelector(".dropdown__items");
+    const dropDownItem = dropDownWrapper.querySelector(".dropdown__item");
+    const dropDownPlus = dropDownWrapper.querySelectorAll(".dropdown__btn:last-child");
+    const dropDownMinus = dropDownWrapper.querySelectorAll(".dropdown__btn:first-child");
+    const dropDownControl = dropDownWrapper.querySelector(".dropdown__control");
+    const dropDownCount = dropDownWrapper.querySelector(".dropdown__count");
+    let facilities = "2 спальни, 2 кровати...";
+    let guests = "Сколько гостей";
+    
+    //функция подсчёта удобств, возращает текст для вставки в select (обрезанный)
+    function countFacilities() {
+      let countBed = Number(dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent);
+      let countBedroom = Number(dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent);
+      let countBathroom = Number(dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent);
+      facilities = "";
+      if (countBed > 0) {
+        if (countBed == 1) {
+          facilities = "1 спальня";
+        } else if (countBed >=2 && countBed <= 4) {
+            facilities = String(countBed) +" спальни";
+        } else if (countBed > 4) {
+          facilities = String(countBed) +" спален";
+        }
+        if (countBedroom > 0 || countBathroom > 0) {
+          facilities = facilities + ", "
+        }
       }
-      if (countBedroom > 0 || countBathroom > 0) {
-        facilities = facilities + ", "
+      if (countBedroom > 0) {
+        if (countBedroom == 1) {
+          facilities = facilities + "1 кровать";
+        } else if (countBedroom >= 2 && countBedroom <= 4) {
+            facilities = facilities + String(countBedroom)+" кровати";
+        } else {
+            facilities = facilities + String(countBedroom)+" кроватей";
+        } 
+        if (countBathroom > 0) {
+          facilities = facilities + ", "
+        }
       }
-    }
-    if (countBedroom > 0) {
-      if (countBedroom == 1) {
-        facilities = facilities + "1 кровать";
-      } else if (countBedroom >= 2 && countBedroom <= 4) {
-          facilities = facilities + String(countBedroom)+" кровати";
-      } else {
-          facilities = facilities + String(countBedroom)+" кроватей";
-      } 
       if (countBathroom > 0) {
-        facilities = facilities + ", "
+        if (countBathroom == 1) {
+          facilities = facilities + "1 ванная комната";
+        } else if (countBathroom >=2 && countBathroom <=4) {
+            facilities = facilities + String(countBathroom)+" ванные комнаты";
+        } else {
+            facilities = facilities + String(countBathroom)+" ванных комнат";
+        }
       }
+      facilities = facilities.slice(0,20) + "..."
+      return facilities;
     }
-    if (countBathroom > 0) {
-      if (countBathroom == 1) {
-        facilities = facilities + "1 ванная комната";
-      } else if (countBathroom >=2 && countBathroom <=4) {
-          facilities = facilities + String(countBathroom)+" ванные комнаты";
-      } else {
-          facilities = facilities + String(countBathroom)+" ванных комнат";
-      }
-    }
-    facilities = facilities.slice(0,20) + "..."
-    return facilities;
-  }
 
-  //функция подсчета гостей, возвращает текст для вставки в select
-  function countGuest() {
-    let countAdult = Number(dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent);
-    let countChild = Number(dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent);
-    let countBaby = Number(dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent);
-    guests = "";
-    countAdults = countAdult + countChild;
-    if (countAdults > 0) {
-      if (countAdults == 1) {
-        guests = "1 гость";
-      } else if (countAdults >= 2 && countAdults <= 4) {
-        guests = String(countAdults) + " гостя";
-      } else {
-        guests = String(countAdults) + " гостей";
-      }
-    } 
-    if (countBaby > 0) {
+    //функция подсчета гостей, возвращает текст для вставки в select
+    function countGuest() {
+      let countAdult = Number(dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent);
+      let countChild = Number(dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent);
+      let countBaby = Number(dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent);
+      guests = "";
+      countAdults = countAdult + countChild;
       if (countAdults > 0) {
-        guests = guests + ", ";
+        if (countAdults == 1) {
+          guests = "1 гость";
+        } else if (countAdults >= 2 && countAdults <= 4) {
+          guests = String(countAdults) + " гостя";
+        } else {
+          guests = String(countAdults) + " гостей";
+        }
+      } 
+      if (countBaby > 0) {
+        if (countAdults > 0) {
+          guests = guests + ", ";
+        }
+        if (countBaby == 1) {
+          guests = guests + "1 младенец";
+        } else if (countBaby >= 2 && countBaby <=4) {
+          guests = guests + String(countBaby) + " младенца";
+        } else {
+          guests = guests + String(countBaby) + " младенцев";
+        }
       }
-      if (countBaby == 1) {
-        guests = guests + "1 младенец";
-      } else if (countBaby >= 2 && countBaby <=4) {
-        guests = guests + String(countBaby) + " младенца";
-      } else {
-        guests = guests + String(countBaby) + " младенцев";
+      if (countAdults == 0 && countBaby == 0) {
+        guests = "Сколько гостей";
       }
-    }
-    if (countAdults == 0 && countBaby == 0) {
-      guests = "Сколько гостей";
-    }
-    return guests;
-  };
-//	Открыть / закрыть список
-  dropDownBtn.addEventListener("click", function(){
-    dropDownBtn.classList.toggle("dropdown__select--open");
-    dropDownItems.classList.toggle("dropdown__items--visible");
-    // проверяем, есть ли кнопки
-    if (dropDownItems.childNodes.length > 3) {
-      // проверяем количества, если все 0 - прячем кнопку ОЧИСТИТЬ
-      if (
-        dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent == 0 &&
-        dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent == 0 &&
-        dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent == 0
-      ) {
-        dropDownItems.childNodes[3].childNodes[0].classList.add("btn--hide");
-      } else {
-        dropDownItems.childNodes[3].childNodes[0].classList.remove("btn--hide");
-      };
-    }
-  })
-
-// Клик снаружи дропдауна. Закрыть дропдаун
-//  document.addEventListener("click", function (e) {
-//    if (e.target == dropDownWrapper) {
-//      console.log( e.target )
-//    } else {
-//      dropDownBtn.classList.remove("dropdown__select--open");
-//      dropDownItems.classList.remove("dropdown__items--visible");
-//      console.log( e.target )
-//    }
-//    console.log( e.target )
-//  });
-
-// Нажатие на Tab или Escape. Закрыть дропдаун
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-      dropDownBtn.classList.remove("dropdown__select--open");
-      dropDownItems.classList.remove("dropdown__items--visible");
-    }
-  });
-
-// Нажатие на +, добавляем 1, включаем минус
-  dropDownPlus.forEach(function (e) {
-    e.addEventListener("click", function () {
-      let count = Number(e.parentNode.childNodes[1].textContent);
-      if (count == 0) {
-        e.parentNode.childNodes[0].classList.remove("dropdown__btn-disable");
-        count ++;
-      } else if (count > 0) {
-        count ++;
-      }
-      e.parentNode.childNodes[1].textContent = String(count);
+      return guests;
+    };
+  //	Открыть / закрыть список
+    dropDownBtn.addEventListener("click", function(){
+      dropDownBtn.classList.toggle("dropdown__select--open");
+      dropDownItems.classList.toggle("dropdown__items--open");
       // проверяем, есть ли кнопки
       if (dropDownItems.childNodes.length > 3) {
-        // пишем в select количество гостей
-        dropDownBtn.textContent=countGuest();
         // проверяем количества, если все 0 - прячем кнопку ОЧИСТИТЬ
         if (
           dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent == 0 &&
@@ -599,66 +677,119 @@
         } else {
           dropDownItems.childNodes[3].childNodes[0].classList.remove("btn--hide");
         };
-      // если кнопок нет, значит это удобства
-      } else {
-        dropDownBtn.textContent=countFacilities();
       }
     })
-  })
-  
-// Нажатие на -
-  dropDownMinus.forEach(function (e) {
-    e.addEventListener("click", function () {
-      let count = Number(e.parentNode.childNodes[1].textContent);
-      if (count == 1) {
-        count --;
-        e.parentNode.childNodes[0].classList.add("dropdown__btn-disable");
-      } else if (count > 1) {
-        count --;
+
+  // Клик снаружи дропдауна. Закрыть дропдаун
+  //  document.addEventListener("click", function (e) {
+  //    if (e.target == dropDownWrapper) {
+  //      console.log( e.target )
+  //    } else {
+  //      dropDownBtn.classList.remove("dropdown__select--open");
+  //      dropDownItems.classList.remove("dropdown__items--open");
+  //      console.log( e.target )
+  //    }
+  //    console.log( e.target )
+  //  });
+
+  // Нажатие на Tab или Escape. Закрыть дропдаун
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        dropDownBtn.classList.remove("dropdown__select--open");
+        dropDownItems.classList.remove("dropdown__items--open");
       }
-      e.parentNode.childNodes[1].textContent = String(count);
-      // проверяем, есть ли кнопки
-      if (dropDownItems.childNodes.length > 3) {
-        // пишем в select количество гостей
-        dropDownBtn.textContent=countGuest();
-        // проверяем количества, если все 0 - прячем кнопку ОЧИСТИТЬ
-        if (
-          dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent == 0 &&
-          dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent == 0 &&
-          dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent == 0
-        ) {
-          dropDownItems.childNodes[3].childNodes[0].classList.add("btn--hide");
+    });
+
+  // Нажатие на +, добавляем 1, включаем минус
+    dropDownPlus.forEach(function (e) {
+      e.addEventListener("click", function () {
+        let count = Number(e.parentNode.childNodes[1].textContent);
+        if (count == 0) {
+          e.parentNode.childNodes[0].classList.remove("dropdown__btn-disable");
+          count ++;
+        } else if (count > 0) {
+          count ++;
+        }
+        e.parentNode.childNodes[1].textContent = String(count);
+        // проверяем, есть ли кнопки
+        if (dropDownItems.childNodes.length > 3) {
+          // пишем в select количество гостей
+          dropDownBtn.textContent=countGuest();
+          // проверяем количества, если все 0 - прячем кнопку ОЧИСТИТЬ
+          if (
+            dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent == 0 &&
+            dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent == 0 &&
+            dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent == 0
+          ) {
+            dropDownItems.childNodes[3].childNodes[0].classList.add("btn--hide");
+          } else {
+            dropDownItems.childNodes[3].childNodes[0].classList.remove("btn--hide");
+          };
+        // если кнопок нет, значит это удобства
         } else {
-          dropDownItems.childNodes[3].childNodes[0].classList.remove("btn--hide");
-        } 
-      // если кнопок нет, значит это удобства; выводим удобства в select
-      } else {
-        dropDownBtn.textContent=countFacilities();
-      }  
+          dropDownBtn.textContent=countFacilities();
+        }
+      })
     })
-  })
-  // Нажатие на ОЧИСТИТЬ, обнуляем все значения, включая проверку наличие кнопок
-  if (dropDownItems.childNodes.length > 3) {
-    const dropDownClearBtn = dropDownItems.childNodes[3].childNodes[0];
-    const dropDownApplyBtn = dropDownItems.childNodes[3].childNodes[1];
-    dropDownClearBtn.addEventListener("click", function () {
-      dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent = 0;
-      dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent = 0; 
-      dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent = 0;
-      dropDownItems.childNodes[3].childNodes[0].classList.add("btn--hide");
-      dropDownItems.childNodes[0].childNodes[1].childNodes[0].classList.add("dropdown__btn-disable");
-      dropDownItems.childNodes[1].childNodes[1].childNodes[0].classList.add("dropdown__btn-disable");
-      dropDownItems.childNodes[2].childNodes[1].childNodes[0].classList.add("dropdown__btn-disable");
-      dropDownBtn.textContent=countGuest();
-    });
-  
-    // Нажатие на ПРИМЕНИТЬ, закрываем список
-    dropDownApplyBtn.addEventListener("click", function () {
-      dropDownBtn.classList.remove("dropdown__select--open");
-      dropDownItems.classList.remove("dropdown__items--visible");
-    });
-  }
-});</script></section><section class="headers-footers"><figure class="logo-uikit"></figure><header class="header"><style>.header {
+    
+  // Нажатие на -
+    dropDownMinus.forEach(function (e) {
+      e.addEventListener("click", function () {
+        let count = Number(e.parentNode.childNodes[1].textContent);
+        if (count == 1) {
+          count --;
+          e.parentNode.childNodes[0].classList.add("dropdown__btn-disable");
+        } else if (count > 1) {
+          count --;
+        }
+        e.parentNode.childNodes[1].textContent = String(count);
+        // проверяем, есть ли кнопки
+        if (dropDownItems.childNodes.length > 3) {
+          // пишем в select количество гостей
+          dropDownBtn.textContent=countGuest();
+          // проверяем количества, если все 0 - прячем кнопку ОЧИСТИТЬ
+          if (
+            dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent == 0 &&
+            dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent == 0 &&
+            dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent == 0
+          ) {
+            dropDownItems.childNodes[3].childNodes[0].classList.add("btn--hide");
+          } else {
+            dropDownItems.childNodes[3].childNodes[0].classList.remove("btn--hide");
+          } 
+        // если кнопок нет, значит это удобства; выводим удобства в select
+        } else {
+          dropDownBtn.textContent=countFacilities();
+        }  
+      })
+    })
+    // Нажатие на ОЧИСТИТЬ, обнуляем все значения, включая проверку наличие кнопок
+    if (dropDownItems.childNodes.length > 3) {
+      const dropDownClearBtn = dropDownItems.childNodes[3].childNodes[0];
+      const dropDownApplyBtn = dropDownItems.childNodes[3].childNodes[1];
+      dropDownClearBtn.addEventListener("click", function () {
+        dropDownItems.childNodes[0].childNodes[1].childNodes[1].textContent = 0;
+        dropDownItems.childNodes[1].childNodes[1].childNodes[1].textContent = 0; 
+        dropDownItems.childNodes[2].childNodes[1].childNodes[1].textContent = 0;
+        dropDownItems.childNodes[3].childNodes[0].classList.add("btn--hide");
+        dropDownItems.childNodes[0].childNodes[1].childNodes[0].classList.add("dropdown__btn-disable");
+        dropDownItems.childNodes[1].childNodes[1].childNodes[0].classList.add("dropdown__btn-disable");
+        dropDownItems.childNodes[2].childNodes[1].childNodes[0].classList.add("dropdown__btn-disable");
+        dropDownBtn.textContent=countGuest();
+      });
+    
+      // Нажатие на ПРИМЕНИТЬ, закрываем список
+      dropDownApplyBtn.addEventListener("click", function () {
+        dropDownBtn.classList.remove("dropdown__select--open");
+        dropDownItems.classList.remove("dropdown__items--open");
+      });
+    }
+    }
+});</script><script>document.querySelectorAll(".radio__input").forEach(function (dropDownWrapper) {
+  dropDownWrapper.addEventListener("click", function() {
+    dropDownWrapper.parentElement.classList.toggle("radio-button__label--checked");
+  });
+})</script></section><section class="headers-footers"><figure class="logo-uikit"></figure><header class="header"><style>.header {
   background-color: #FFFFFF;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   height: 70px;

@@ -1,0 +1,13 @@
+style
+  include like-button.scss
+// mode - text, masked, subscription
+mixin like-button(lab, mode)
+  if mode == "pressed"
+    div.like-button.like-button--pressed
+      button.like-button__btn #{lab}
+      span(class="like-button__icon material-icons") favorite
+  else 
+    div.like-button
+      button.like-button__btn #{lab}
+      span(class="like-button__icon material-icons") favorite_border
+    
