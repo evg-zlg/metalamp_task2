@@ -4,6 +4,7 @@ include /checkbox/checkbox.pug
 include /radio-buttons/radio-buttons.pug
 include /toggle/toggle.pug
 include /like-button/like-button.pug
+include /rate-button/rate-button.pug
 style 
   include page-form-elements.scss
 header.header-pages-uikit
@@ -45,7 +46,11 @@ div.page-form-elements__content
         div.content__like-buttons-group
           +like-button("2", "")
           +like-button("12", "pressed")
-        
+      div.content__rate-button
+        p.types__h3 rate button
+        div.content__rate-button-group
+          +rate-button("4")
+          +rate-button("5")
     div.colums  
       p range slider 
       p buttons 
@@ -65,3 +70,4 @@ script
   include /dropdown-block/dropdown-block.js 
   include /radio-buttons/radio-buttons.js
   include /like-button/like-button.js
+  include /rate-button/rate-button.js

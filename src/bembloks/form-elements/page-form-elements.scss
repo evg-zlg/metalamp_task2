@@ -70,7 +70,8 @@
 }
 .content__radio p, 
 .content__toggle p,
-.content__like-button p
+.content__like-button p,
+.content__rate-button p
 {
   margin-bottom: 16px;
 }
@@ -83,6 +84,12 @@
 }
 .content__like-buttons-group {
   width: 90px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+.content__rate-button-group {
+  width: 280px;
   display: flex;
   justify-content: space-between;
 }
