@@ -1,0 +1,11 @@
+style
+  include range-slider.scss
+mixin range-slider(lab, start, end)
+  div.range-slider
+    div.range-slider__text
+      label.range-slider__label.types__h3 #{lab}
+      label.range-slider__price #{start} - #{end} 
+    div.range-slider__img
+      div.range-slider__price-start
+      div.range-slider__price-stop
+      div.range-slider__price-between
