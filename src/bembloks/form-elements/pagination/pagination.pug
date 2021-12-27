@@ -1,0 +1,25 @@
+style 
+  include pagination.scss
+- var n = 1; 
+mixin pagination(count, pick, text)
+  div.pagination
+    div.pagination__items
+      button.pagination__btn.pagination__btn--picked
+        span 0
+      if count > 5
+        button.pagination__btn
+          span 1
+        button.pagination__btn
+          span 2
+        button.pagination__btn
+          span ...
+        button.pagination__btn
+          span #{count}
+        button.pagination__arrow 
+          span.material-icons arrow_forward
+      else 
+        while count > 0
+          - n++
+          label #{n}
+          - count--
+    label.types__body.pagination__text #{text}

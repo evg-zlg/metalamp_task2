@@ -6,6 +6,7 @@ include /toggle/toggle.pug
 include /like-button/like-button.pug
 include /rate-button/rate-button.pug
 include /range-slider/range-slider.pug
+include /pagination/pagination.pug
 style 
   include page-form-elements.scss
 header.header-pages-uikit
@@ -63,7 +64,10 @@ div.page-form-elements__content
         +button("click me", "hover", "trans") 
         +button("click me", "", "link") 
         +button("click me", "hover", "link") 
-        +button("перейти к оплате", "", "go-payment") 
+        +button("перейти к оплате", "", "go-payment")
+      div.content__pagination 
+        p.types__h3 pagination 
+        +pagination(15, 1, "1 – 12 из 100+ вариантов аренды")
   div.row
     div.colums
       div.page-form-elements__text-block      
