@@ -9,4 +9,4 @@ document.querySelectorAll(".like-button__btn").forEach(function (likeButton) {
     }
     likeButton.parentElement.classList.toggle("like-button--pressed");
   });
-})
+});
