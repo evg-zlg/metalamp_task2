@@ -1,4 +1,4 @@
 style
   include button.scss 
-mixin button(lab, options)
-  button(class="btn btn--"+options) #{lab}
+mixin button(lab, mod, type)
+  button(class="btn btn--"+mod+" btn--type-"+type) #{lab}

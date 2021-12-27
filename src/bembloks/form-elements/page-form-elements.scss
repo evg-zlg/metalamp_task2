@@ -20,7 +20,7 @@
 }
 
 .colums {
-  max-height: 515px;
+  max-height: 535px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -71,7 +71,8 @@
 .content__radio p, 
 .content__toggle p,
 .content__like-button p,
-.content__rate-button p
+.content__rate-button p, 
+.content__buttons p
 {
   margin-bottom: 16px;
 }
@@ -81,6 +82,9 @@
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 44.44px;
+}
+.content__toggle .toggle{
+  margin-bottom: 14px;
 }
 .content__like-buttons-group {
   width: 90px;
@@ -93,3 +97,23 @@
   display: flex;
   justify-content: space-between;
 }
+.content__range-slider {
+  margin-bottom: 40px;
+}
+.content__buttons {
+  width: 320px;
+  height: 270px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.content__buttons p {
+  width: 100%;
+}
+.content__buttons .btn {
+  margin-bottom: 30px;
+  margin-right: 19px;
+}
+.content__buttons .btn:nth-child(5) {
+  margin-right: 50px;
+}
+
