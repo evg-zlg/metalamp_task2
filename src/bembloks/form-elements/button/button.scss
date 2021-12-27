@@ -33,18 +33,41 @@
   opacity: 0.5;
 }
 .btn--type-trans {
+  box-sizing: border-box;
   color: #BC9CFF;
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
   border-radius: 22px;
-  background: #ffffff;
-  border: 2px solid #BC9CFF;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   width: 99px;
   height: 44px; 
+  border: none;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
 }
-.btn--type-trans + .btn--hover, .btn--type-trans:hover {
-  border-color: #BC9CFF 0.5;
+.btn--type-trans span {
+  display: block;
+  z-index: 1;
+  cursor: pointer;
+}
+.btn--type-trans::before {
+  box-sizing: border-box;
+  content: "";
+  width: 93px;
+  height: 38px;
+  border-radius: 22px;
+  background: #FFFFFF;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  z-index: -1;
+  cursor: pointer;
+}
+.btn--type-trans:hover, .btn--type-trans + .btn--hover  {
+  background: linear-gradient(180deg, rgb(188, 156, 255, 0.5) 0%, rgb(139, 164, 249, 0.5) 100%);
 }
 .btn--type-link + .btn--hover, .btn--type-link:hover {
   color: rgba(31, 32, 65, 0.5);
@@ -56,6 +79,9 @@
   border-radius: 22px;
   color: #FFFFFF;
   position: relative;
+}
+.btn--type-go-payment:hover {
+  background: linear-gradient(180deg, rgb(188, 156, 255, 0.5) 0%, rgb(139, 164, 249, 0.5) 100%);
 }
 .btn--type-go-payment::after {
   font-family: "Material Icons";
