@@ -18,6 +18,12 @@
 .row:nth-child(2) {
   height: 270px;
 }
+.row:nth-child(3) {
+  height: 310.5px;
+}
+.row:nth-child(3) .colums:nth-child(1) {
+  justify-content: flex-start;
+}
 
 .colums {
   max-height: 535px;

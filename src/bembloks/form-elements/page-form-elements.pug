@@ -7,6 +7,7 @@ include /like-button/like-button.pug
 include /rate-button/rate-button.pug
 include /range-slider/range-slider.pug
 include /pagination/pagination.pug
+include expandable-checkbox-list/expandable-checkbox-list.pug
 style 
   include page-form-elements.scss
 header.header-pages-uikit
@@ -80,9 +81,14 @@ div.page-form-elements__content
       +dropdown("DROPDAWN", "Сколько гостей", "guests", "open")
     div.colums
       +dropdown("DROPDAWN", "Сколько гостей", "guests", "open", "threeGuests")
+  div.row
+    div.colums 
+      +expandable-checkbox-list("expandable checkbox list", "")
+      +expandable-checkbox-list("expandable checkbox list", "open")
 script
   include /dropdown-block/dropdown-block.js 
   include /radio-buttons/radio-buttons.js
   include /like-button/like-button.js
   include /rate-button/rate-button.js
   include /pagination/pagination.js
+  include /expandable-checkbox-list/expandable-checkbox-list.js

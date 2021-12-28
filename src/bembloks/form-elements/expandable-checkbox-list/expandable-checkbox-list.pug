@@ -1,0 +1,14 @@
+include ../checkbox/checkbox.pug
+style 
+  include expandable-checkbox-list.scss 
+mixin expandable-checkbox-list(lab, mode)
+  div.expandable-checkbox-list
+    div(class="expandable-checkbox-list__title expandable-checkbox-list__title--"+mode)
+      label(class="types__h3 expandable-checkbox-list__label") #{lab}
+    div(class="expandable-checkbox-list__items expandable-checkbox-list__items--"+mode)
+      +checkbox("Завтрак", "")
+      +checkbox("Письменный стол", "checked")
+      +checkbox("Стул для кормления", "checked")
+      +checkbox("Кроватка", "checked")
+      +checkbox("Телевизор", "")
+      +checkbox("Шампунь", "")

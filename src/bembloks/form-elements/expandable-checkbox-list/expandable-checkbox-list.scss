@@ -1,0 +1,43 @@
+.expandable-checkbox-list {
+  width: 266px;
+  height: 44px;
+  position: relative;
+}
+.expandable-checkbox-list__title {
+  cursor: pointer;
+  margin-top: 15px;
+}
+.expandable-checkbox-list__label {
+  pointer-events: none;
+  margin: 0;
+  text-align: center;
+}
+.expandable-checkbox-list__title:after {
+  content: "expand_more";
+  font-family: "Material Icons";
+  font-size: 24px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.5);
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+.expandable-checkbox-list__title--open:after{
+  transform: rotate(180deg);
+}
+.expandable-checkbox-list__items {
+  position:absolute;
+  left: 0;
+  top: 46.5px;
+  height: 171px;
+  width: 266px;
+  background: #ffffff;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+}
+.expandable-checkbox-list__items--open {
+  display:flex;
+}

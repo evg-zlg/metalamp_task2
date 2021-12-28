@@ -8,13 +8,11 @@ function newPaginationNumber(pickBtn) {
 
   // рисуем номера, убираем / добавляем точки
   function dots(firstItemNumber) {
-    console.log("firstItemNumber=",firstItemNumber);
     if ((lastPage - firstItemNumber) <= 4) {
       paginationItems.childNodes[0].childNodes[0].textContent = String(lastPage - 4);
       paginationItems.childNodes[1].childNodes[0].textContent = String(lastPage - 3);
       paginationItems.childNodes[2].childNodes[0].textContent = String(lastPage - 2);
       paginationItems.childNodes[3].childNodes[0].textContent = String(lastPage - 1);
-      console.log("if случился");
     } else {
       paginationItems.childNodes[0].childNodes[0].textContent = String(firstItemNumber);
       paginationItems.childNodes[1].childNodes[0].textContent = String(firstItemNumber + 1);
@@ -25,7 +23,6 @@ function newPaginationNumber(pickBtn) {
         paginationItems.childNodes[1].childNodes[0].textContent = String(lastPage - 3);
         paginationItems.childNodes[2].childNodes[0].textContent = String(lastPage - 2);
         paginationItems.childNodes[3].childNodes[0].textContent = String(lastPage - 1);
-        console.log("if 2 случился");
       };
     };
   };
@@ -69,9 +66,6 @@ document.querySelectorAll(".pagination__btn").forEach(function (paginationBtn) {
     // если клик по странице, которая уже выбрана, то делаем ничего
     if (paginationBtn.classList.contains("pagination__btn--picked")) { 
       return 
-    } else if (paginationBtn.textContent == "...") {
-      // добавить функцию, которая рисует новые номера
-      newPaginationNumber(paginationBtn);
     } else if (paginationBtn.nextSibling.classList.contains("pagination__arrow")) {
       // если это последняя страница, то выключаем стрелочку
       // и рисуем новые номера
