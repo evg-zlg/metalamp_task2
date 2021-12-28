@@ -1,0 +1,6 @@
+style
+  include bullet-list.scss 
+mixin bullet-list(bulletList)
+  ul.bullet-list
+    each val in bulletList
+      li.bullet-list__item #{val}

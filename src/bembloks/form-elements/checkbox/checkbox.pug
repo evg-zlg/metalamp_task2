@@ -1,12 +1,22 @@
 style
   include checkbox.scss
 // mode - text, masked, subscription
-mixin checkbox(lab, mode)
-  div.checkbox
-    label.checkbox__label #{lab}
-      if mode == "checked"
-        input(type="checkbox" checked class="checkbox__input" )
-      else
-        input(type="checkbox" class="checkbox__input" ) 
-      span.checkbox__mark  
-    
+mixin checkbox(lab, mode, type, sublab)
+  if type == "rich"
+     div.checkbox
+      label.checkbox__label.checkbox__label--rich #{lab}
+        if mode == "checked"
+          input(type="checkbox" checked class="checkbox__input" )
+        else
+          input(type="checkbox" class="checkbox__input" ) 
+        span.checkbox__mark  
+      label.checkbox__sublabel #{sublab}
+  else 
+    div.checkbox
+      label.checkbox__label #{lab}
+        if mode == "checked"
+          input(type="checkbox" checked class="checkbox__input" )
+        else
+          input(type="checkbox" class="checkbox__input" ) 
+        span.checkbox__mark  
+      

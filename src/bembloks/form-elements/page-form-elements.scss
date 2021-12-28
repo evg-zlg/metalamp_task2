@@ -78,9 +78,16 @@
 .content__toggle p,
 .content__like-button p,
 .content__rate-button p, 
-.content__buttons p
+.content__buttons p, 
+.content__rich-checkbox-buttons p, 
+.content__bullet-list p
 {
   margin-bottom: 16px;
+}
+.content__rich-checkbox-buttons p
+{
+  margin-bottom: 16px;
+  margin-top: 14px;
 }
 .content__toggle {
   height: 90px;

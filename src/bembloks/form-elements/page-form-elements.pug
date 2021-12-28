@@ -8,6 +8,7 @@ include /rate-button/rate-button.pug
 include /range-slider/range-slider.pug
 include /pagination/pagination.pug
 include expandable-checkbox-list/expandable-checkbox-list.pug
+include bullet-list/bullet-list.pug
 style 
   include page-form-elements.scss
 header.header-pages-uikit
@@ -85,6 +86,16 @@ div.page-form-elements__content
     div.colums 
       +expandable-checkbox-list("expandable checkbox list", "")
       +expandable-checkbox-list("expandable checkbox list", "open")
+    div.colums
+      div.content__rich-checkbox-buttons 
+        p.types__h3 rich checkbox buttons
+        +checkbox("Широкий коридор", "", "rich", "Ширина коридоров в номере не менее 91см.")
+        +checkbox("Помощник для инвалидов", "", "rich", "На 1 этаже вас встретит специалист и проводит до номера.")
+    div.colums
+      div.content__bullet-list
+        p.types__h3 bullet list
+        - var bulletList = ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]
+        +bullet-list(bulletList)
 script
   include /dropdown-block/dropdown-block.js 
   include /radio-buttons/radio-buttons.js

@@ -1,5 +1,6 @@
 .checkbox {
   max-width: 222px;
+  
 }
 .checkbox__input {
     position: absolute;
@@ -18,8 +19,14 @@
   line-height: 18px;
   color: rgba(31, 32, 65, 0.5);
   cursor: pointer;
-  padding-left: 30px;
-  
+  padding-left: 30px; 
+}
+.checkbox__label--rich {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.75);
 }
 .checkbox__mark::before {
   content: '';
@@ -49,3 +56,15 @@
 .checkbox__input:checked + .checkbox__mark::before {
   border: 1.5px solid #BC9CFF;
 } 
+
+.checkbox__sublabel {
+  margin-left: 30px;
+  margin-top: 5px;
+  margin-bottom: 11px;
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: rgba(31, 32, 65, 0.5);
+}

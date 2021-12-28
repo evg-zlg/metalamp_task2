@@ -1,0 +1,26 @@
+.bullet-list {
+  width: 220px;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+
+}
+.bullet-list__item {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+  padding-left: 20px;
+  position: relative;
+}
+.bullet-list__item::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: rgba(31, 32, 65, 0.25);
+  border-radius: 100%;
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
