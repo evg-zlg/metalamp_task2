@@ -8,27 +8,59 @@ function newPaginationNumber(pickBtn) {
 
   // рисуем номера, убираем / добавляем точки
   function dots(firstItemNumber) {
-    if ((lastPage - Number(paginationItems.firstChild.textContent)) <= 4) {
-      paginationItems.childNodes[0].textContent = String(Number(paginationItems.childNodes[countItems]) - 4);
-      paginationItems.childNodes[1].textContent = String(Number(paginationItems.childNodes[countItems]) - 3);
-      paginationItems.childNodes[2].textContent = String(Number(paginationItems.childNodes[countItems]) - 2);
-      paginationItems.childNodes[3].textContent = String(Number(paginationItems.childNodes[countItems]) - 1);
+    console.log("firstItemNumber=",firstItemNumber);
+    if ((lastPage - firstItemNumber) <= 4) {
+      paginationItems.childNodes[0].childNodes[0].textContent = String(lastPage - 4);
+      paginationItems.childNodes[1].childNodes[0].textContent = String(lastPage - 3);
+      paginationItems.childNodes[2].childNodes[0].textContent = String(lastPage - 2);
+      paginationItems.childNodes[3].childNodes[0].textContent = String(lastPage - 1);
+      console.log("if случился");
     } else {
-      paginationItems.childNodes[0].textContent = String(firstItemNumber);
-      paginationItems.childNodes[1].textContent = String(firstItemNumber + 1);
-      paginationItems.childNodes[2].textContent = String(firstItemNumber + 2);
-      paginationItems.childNodes[3].textContent = "...";
-    }
-  }
+      paginationItems.childNodes[0].childNodes[0].textContent = String(firstItemNumber);
+      paginationItems.childNodes[1].childNodes[0].textContent = String(firstItemNumber + 1);
+      paginationItems.childNodes[2].childNodes[0].textContent = String(firstItemNumber + 2);
+      paginationItems.childNodes[3].childNodes[0].textContent = "...";
+      if ((lastPage - Number(paginationItems.firstChild.textContent)) <= 4) {
+        paginationItems.childNodes[0].childNodes[0].textContent = String(lastPage - 4);
+        paginationItems.childNodes[1].childNodes[0].textContent = String(lastPage - 3);
+        paginationItems.childNodes[2].childNodes[0].textContent = String(lastPage - 2);
+        paginationItems.childNodes[3].childNodes[0].textContent = String(lastPage - 1);
+        console.log("if 2 случился");
+      };
+    };
+  };
 
-    // убираем все указатели
-  document.querySelectorAll(".pagination__btn").forEach(function (activeBtn) {
-    activeBtn.classList.remove("pagination__btn--picked");
-  });
+  // убираем все указатели
+  function clearPicked() {
+    document.querySelectorAll(".pagination__btn--picked").forEach(function (activeBtn) {
+      activeBtn.classList.remove("pagination__btn--picked");
+    });
+  }  
+
+  clearPicked();
   // ставим указатель на выбранную страницу
   pickBtn.classList.add("pagination__btn--picked");
   //если кликнули по точкам 
   dots(firstItemNumber);
+  if (pickBtn.previousSibling == null && pickBtn.textContent=="1") {
+    return
+  } else if (pickBtn.previousSibling == null && pickBtn.textContent != "1") {
+    dots(Number(pickBtn.textContent) - 1);
+    clearPicked();
+    pickBtn.nextSibling.classList.add("pagination__btn--picked");
+  } else if (pickBtn.nextSibling.textContent == "...") {
+    dots(Number(pickBtn.textContent) - 1);
+    clearPicked();
+    pickBtn.previousSibling.classList.add("pagination__btn--picked");
+  } else if (pickBtn.textContent == "...") {
+    dots(Number(pickBtn.previousSibling.textContent));
+    clearPicked();
+    pickBtn.previousSibling.previousSibling.classList.add("pagination__btn--picked");
+  } else if (pickBtn.textContent == String(lastPage)) {
+    dots(lastPage - 4);
+    clearPicked();
+    pickBtn.classList.add("pagination__btn--picked");
+  }
 }
 
 // слушаем клик на кнопках с цифрами
