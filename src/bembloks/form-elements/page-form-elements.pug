@@ -7,8 +7,9 @@ include /like-button/like-button.pug
 include /rate-button/rate-button.pug
 include /range-slider/range-slider.pug
 include /pagination/pagination.pug
-include expandable-checkbox-list/expandable-checkbox-list.pug
-include bullet-list/bullet-list.pug
+include /expandable-checkbox-list/expandable-checkbox-list.pug
+include /bullet-list/bullet-list.pug
+include /features/features.pug
 style 
   include page-form-elements.scss
 header.header-pages-uikit
@@ -96,6 +97,12 @@ div.page-form-elements__content
         p.types__h3 bullet list
         - var bulletList = ["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]
         +bullet-list(bulletList)
+  div.row
+    div.colums 
+      div.content__features
+        +features("insert_emoticon", "Комфорт", "Шумопоглощающие стены")
+        +features("location_city", "Удобство", "Окно в каждой из спален")
+
 script
   include /dropdown-block/dropdown-block.js 
   include /radio-buttons/radio-buttons.js
